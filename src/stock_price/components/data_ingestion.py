@@ -33,6 +33,7 @@ class DataIngestion:
         if not symbol:
             logger.error("Stock symbol must be a non-empty string.")
             raise ValueError("Stock symbol must be a non-empty string.")
+        
         if not api_token:
             logger.error("EODHD API token missing.")
             raise ValueError("EODHD API token required.")
@@ -53,6 +54,7 @@ class DataIngestion:
             Optional[pd.DataFrame]: OHLCV data or None if fetching fails.
         """
         logger.info(f"Fetching stock prices for {self.ticker} from {self.start_date} to {self.end_date}")
+
         try:
             stock_data = yf.download(
                 tickers=self.ticker,
@@ -65,14 +67,13 @@ class DataIngestion:
                 return None
             #dropping unnecessary row
             stock_data = stock_data.droplevel(1, axis=1)
-            logger.debug(f"Stock data sample:\n{stock_data.tail().to_string()}")
-            # Converting into DataFrame
-            stock_df = pd.DataFrame(stock_data, index=stock_data.index)
-            # Reset the index to make 'Date' a column
+            logger.debug(f"Stock data sample:\n{stock_data.to_string()}")
+            # Converting into DataFrame and making date as a column
+            stock_df = pd.DataFrame(stock_data, index=stock_data.index) 
             stock_df.reset_index(inplace=True)
-            # Rename the 'index' column to 'Date'
             stock_df.rename(columns={'index': 'date'}, inplace=True)
             return stock_df
+        
         except Exception as e:
             logger.error(f"Stock price fetch failed: {str(e)}")
             return None
@@ -88,6 +89,7 @@ class DataIngestion:
         url = f"https://eodhd.com/api/sentiments?s={self.ticker.lower()}.us&from={self.start_date}&to={self.end_date}&api_token={self.api_token}&fmt=json"
 
         logger.info(f"Fetching sentiment scores for {self.ticker}")
+
         try:
             response = requests.get(url, timeout=10).json()
             sentiment_data = response
@@ -95,12 +97,15 @@ class DataIngestion:
                 logger.warning(f"No sentiment data for {self.ticker}")
                 return None
             
-            # Converting into DataFrame
+            # Converting into DataFrame and updating columns
             symbol = list(sentiment_data.keys())[0]
             data = sentiment_data[symbol]
             sentiment_df = pd.DataFrame(data)
+            sentiment_df.drop('count', axis=1, inplace=True)    # removing 'count' column
+            sentiment_df.rename(columns={'date':'Date'}, inplace=True)  # renaming 'date' as 'Date'
             logger.debug(sentiment_df)
-            return sentiment_data
+            return sentiment_df
+        
         except RequestException as e:
             logger.error(f"Sentiment fetch failed: {str(e)}")
 
@@ -112,17 +117,53 @@ class DataIngestion:
         Returns: 
 
         """
-        logger.info("Starting full data ingestion")
+        logger.info("Starting full data ingestion and merging")
+
+        # Fetch data
         stock_data = self.fetch_stock_prices()
         sentiment_data = self.fetch_sentiment_data()
 
+        # Check is either dataset is missing
+        if stock_data is None or sentiment_data is None:
+            logger.error("Cannot merge data: Stock or sentiment data is missing.")
+            return None
+        
+        try:
+            # Ensure 'Date' columns are in consistent format
+            stock_data['Date'] = stock_data['Date'].astype(str)
+            sentiment_data['Date'] = sentiment_data['Date'].astype(str)
+            # Merging with left join keeping all stock dates
+            merged_df = pd.merge(
+                stock_data,
+                sentiment_data,
+                how='left',
+                on='Date',
+            )
+
+            logger.info(f"Merged data shape {merged_df.shape}")
+            logger.debug(f"Merged data head\n{merged_df.head().to_string()}")
+
+            return merged_df
+        
+        except Exception as e:
+            logger.error(f"Data merge failed: {str(e)}", exc_info=True)
+            return None
+
+        
 
 
 
+# def main():
+#     """Main function to demonstrate data ingestion and merging."""
+#     symbol = input("Enter stock symbol (e.g., AMZN): ").strip().upper()
 
-if __name__=="__main__":
-    obj = DataIngestion("AAPL")
-    obj.fetch_stock_prices()
-    obj.fetch_sentiment_data()
+#     ingestor = DataIngestion(symbol)
+#     merged_data = ingestor.merge_all_data()
 
+#     if merged_data is not None:
+#         print("Merged Data Sample (Last 30 Days):")
+#         print(merged_data.head())
+
+# if __name__ == "__main__":
+#     main()
     
