@@ -67,7 +67,7 @@ class DataIngestion:
                 return None
             #dropping unnecessary row
             stock_data = stock_data.droplevel(1, axis=1)
-            logger.debug(f"Stock data sample:\n{stock_data.to_string()}")
+            logger.debug(f"Stock data sample:\n{stock_data.tail().to_string()}")
             # Converting into DataFrame and making date as a column
             stock_df = pd.DataFrame(stock_data, index=stock_data.index) 
             stock_df.reset_index(inplace=True)
@@ -103,7 +103,6 @@ class DataIngestion:
             sentiment_df = pd.DataFrame(data)
             sentiment_df.drop('count', axis=1, inplace=True)    # removing 'count' column
             sentiment_df.rename(columns={'date':'Date'}, inplace=True)  # renaming 'date' as 'Date'
-            logger.debug(sentiment_df)
             return sentiment_df
         
         except RequestException as e:

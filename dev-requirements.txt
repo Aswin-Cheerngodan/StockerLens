@@ -1,0 +1,9 @@
+ipykernel==6.29.5
+ipython==9.0.2
+yfinance==0.2.54
+tensorflow==2.19.0
+matplotlib==3.10.1
+scikit-learn==1.6.1
+python-dotenv==1.0.1
+pandas==2.2.3
+numpy==2.1.3

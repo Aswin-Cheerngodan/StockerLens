@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockerLens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#0E1320] text-white">
+    <h1 class="text-3xl font-bold text-yellow-500 mt-2 ml-6">StockerLens</h1>
+    <div class="flex flex-col items-center">
+        <div class="w-full max-w-2xl space-y-6 px-4">
+            <!-- Stock Selection -->
+            <div class="bg-[#1E2333] rounded-xl p-6">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-grow">
+                        <label class="block text-sm text-gray-300 mb-2">Select Stock</label>
+                        <select class="w-full bg-[#2C3347] text-white p-3 rounded-lg">
+                            <option>AAPL</option>
+                            <option>MSFT</option>
+                        </select>
+                    </div>
+                    <button class="bg-yellow-500 text-black px-6 py-3 rounded-lg mt-6 hover:bg-yellow-600 transition">
+                        Predict
+                    </button>
+                </div>
+                <div class="mt-4 bg-[#2C3347] p-4 rounded-lg text-center">
+                    <p class="text-xl">Predicted Price Today: <span class="text-yellow-500">$0</span> <span class="text-gray-400">(± $2.50)</span></p>
+                </div>
+            </div>
+
+            <!-- News Sentiment -->
+            <div class="bg-[#1E2333] rounded-xl p-6">
+                <label class="block text-sm text-gray-300 mb-2">News Sentiment</label>
+                <div class="flex space-x-4">
+                    <input type="text" placeholder="Enter stock for sentiment analysis" 
+                        class="flex-grow bg-[#2C3347] text-white p-3 rounded-lg">
+                    <button class="bg-yellow-500 text-black px-6 py-3 rounded-lg hover:bg-yellow-600 transition">
+                        Analyze
+                    </button>
+                </div>
+                <div class="mt-4 bg-[#2C3347] p-3 rounded-lg text-center">
+                    <p>None</p>
+                </div>
+            </div>
+
+            <!-- Chart Trend Analyzer -->
+            <div class="bg-[#1E2333] rounded-xl p-6">
+                <p class="text-center text-lg mb-4">Chart Trend Analyzer</p>
+                <div class="flex space-x-4 items-center">
+                    <div class="flex-grow">
+                        <input type="file" accept="image/*" 
+                    class="flex-grow file:mr-4 file:rounded-lg file:border-0 file:bg-yellow-500 file:text-black file:px-4 file:py-2 hover:file:bg-yellow-600">
+                        
+                    </div>
+                    <button class="bg-yellow-500 text-black px-6 py-3 rounded-lg hover:bg-yellow-600 transition mb-2">
+                        Predict
+                    </button>
+                </div>
+                <div class="mt-4 bg-[#2C3347] p-3 rounded-lg text-center">
+                    <p>None</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

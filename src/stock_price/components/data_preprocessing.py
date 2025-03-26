@@ -88,11 +88,9 @@ class DataPreprocessor:
             df = df[self.feature_columns]
             # Standardizing features
             scaler = self.load_scaler(symbol=symbol)
-            scaled_data = scaler.transform(df)
+            scaled_data = scaler.transform(df)  
             scaled_df = pd.DataFrame(scaled_data,columns=self.feature_columns)
-            # Create target column: Next day's Close price
-            scaled_df['Target'] = scaled_df['Close'].shift(-1)
-            # Log preprocessing results
+            
             logger.info(f"Preprocessed data shape: {df.shape}")
             logger.debug(f"Preprocessed data sample:\n{df.head().to_string()}")
 
@@ -105,9 +103,9 @@ class DataPreprocessor:
 
 
 
-if __name__=="__main__":
-    dataingestor = DataIngestion("AAPL")
-    merged_data = dataingestor.merge_all_data()
+# if __name__=="__main__":
+#     dataingestor = DataIngestion("AAPL")
+#     merged_data = dataingestor.merge_all_data()
 
-    preprocessor = DataPreprocessor()
-    logger.debug(preprocessor.preprocess("AAPL", merged_data))
+#     preprocessor = DataPreprocessor()
+#     logger.debug(preprocessor.preprocess("AAPL", merged_data))
