@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.templating import Jinja2Templates
 import uvicorn
 from app.api.routes.home import home_router
 
@@ -15,7 +16,7 @@ app.add_middleware(
 )
 
 # Include routers
-app.include_router(home_router, prefix="/home")
+app.include_router(home_router,)
 
 # Health check endpoint
 @app.get("/api/health")

@@ -129,7 +129,7 @@ class PricePredictor:
             dummy[:, 0] = normalized_pred.flatten()
             predicted = scaler.inverse_transform(dummy)[:, 0]
             logger.debug(f"Predicted price: {predicted}")
-            return predicted
+            return round(predicted[0], 2)
         
         except Exception as e:
             logger.error(f"Price prediction failed: {str(e)}", exc_info=True)
@@ -138,16 +138,16 @@ class PricePredictor:
 
 
 
-if __name__=="__main__":
-    symbol = "MSFT"
+# if __name__=="__main__":
+#     symbol = "MSFT"
 
-    predictor = PricePredictor(ticker=symbol)
-    predicted_price = predictor.predict_price()
+#     predictor = PricePredictor(ticker=symbol)
+#     predicted_price = predictor.predict_price()
 
-    if predicted_price is not None:
-        print(f"Predicted Today's closing price for {symbol}: ${predicted_price}")
-    else:
-        print("Prediction failed. Check logs for details.")
+#     if predicted_price is not None:
+#         print(f"Predicted Today's closing price for {symbol}: ${predicted_price}")
+#     else:
+#         print("Prediction failed. Check logs for details.")
 
 
     
