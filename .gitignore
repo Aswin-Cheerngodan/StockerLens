@@ -1,5 +1,9 @@
 __pycache__/
+*.pyc
 /venv
-.gitignore
 .env
 /artifacts/models/stock_price/
+*.keras
+logs/
+static/
+logs/

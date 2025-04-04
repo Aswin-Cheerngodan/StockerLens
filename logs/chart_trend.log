@@ -1,0 +1,36 @@
+2025-04-04 17:25:11 - __main__ - INFO - Intialized Data ingestion for chart trend classification.
+2025-04-04 17:25:11 - __main__ - ERROR - Image validation failed: [Errno 2] No such file or directory: 'NO'
+Traceback (most recent call last):
+  File "D:\Capstone Projects\StockerLens\src\chart_trend\components\data_ingestion.py", line 27, in ingest_image
+    image = Image.open(file)
+            ^^^^^^^^^^^^^^^^
+  File "D:\Capstone Projects\StockerLens\venv\Lib\site-packages\PIL\Image.py", line 3465, in open
+    fp = builtins.open(filename, "rb")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'NO'
+2025-04-04 20:05:22 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-04 20:05:22 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\Screenshot (1).png
+2025-04-04 20:05:25 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-04 20:05:25 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\Screenshot (1).png
+2025-04-04 20:05:26 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-04 20:05:26 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\Screenshot (1).png
+2025-04-04 20:05:27 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-04 20:05:27 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\Screenshot (1).png
+2025-04-04 20:11:11 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-04 20:11:11 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\Screenshot (2).png
+2025-04-04 20:11:59 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-04 20:11:59 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\Screenshot (2).png
+2025-04-04 20:12:05 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-04 20:12:05 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\Screenshot (2).png
+2025-04-04 20:12:11 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-04 20:12:11 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\Screenshot (3).png
+2025-04-04 20:14:34 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-04 20:14:34 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\Screenshot (7).png
+2025-04-04 20:27:07 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-04 20:27:07 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\b27ea087f3b74fd0b4ad02c6abef65dc_Screenshot (8).png
+2025-04-04 21:13:14 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-04 21:13:14 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\260bcf5ec60644bb9d83f7fdffc80795_Screenshot (1).png
+2025-04-04 21:13:14 - src.chart_trend.components.data_preprocessing - DEBUG - Preprocessed image shape: (1, 1080, 1920, 3)
+2025-04-04 21:17:51 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-04 21:17:51 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\5a540ef082484d399cb1aa2140d02361_Screenshot (1).png
+2025-04-04 21:17:51 - src.chart_trend.components.data_preprocessing - DEBUG - Preprocessed image shape: (1, 224, 224, 3)

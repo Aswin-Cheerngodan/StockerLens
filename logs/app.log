@@ -1,0 +1,24 @@
+2025-04-04 12:06:19 - app.api.routes.home - INFO - Stock symbol: AAPL
+2025-04-04 12:06:33 - app.api.routes.home - DEBUG - 205.13
+2025-04-04 12:10:12 - app.api.routes.home - INFO - Stock symbol: AAPL
+2025-04-04 12:10:18 - app.api.routes.home - DEBUG - 205.13
+2025-04-04 12:10:44 - app.api.routes.home - INFO - Stock symbol: AAPL
+2025-04-04 12:10:49 - app.api.routes.home - DEBUG - 205.13
+2025-04-04 12:16:18 - app.api.routes.home - INFO - Stock symbol: AAPL
+2025-04-04 12:16:24 - app.api.routes.home - DEBUG - 205.13
+2025-04-04 12:16:26 - app.api.routes.home - INFO - Stock symbol: 
+2025-04-04 12:16:31 - app.api.routes.home - INFO - Stock symbol: AAPL
+2025-04-04 12:16:36 - app.api.routes.home - DEBUG - 205.13
+2025-04-04 12:16:39 - app.api.routes.home - INFO - Stock symbol: MSFT
+2025-04-04 12:16:45 - app.api.routes.home - DEBUG - 376.91
+2025-04-04 12:19:04 - app.api.routes.home - INFO - Stock symbol: hihii
+2025-04-04 12:19:27 - app.api.routes.home - INFO - Stock symbol: MSFT
+2025-04-04 12:19:32 - app.api.routes.home - DEBUG - 376.91
+2025-04-04 12:19:35 - app.api.routes.home - INFO - Stock symbol: AAPL
+2025-04-04 12:19:42 - app.api.routes.home - DEBUG - 205.13
+2025-04-04 12:19:47 - app.api.routes.home - INFO - Stock symbol: AAPL
+2025-04-04 12:19:53 - app.api.routes.home - DEBUG - 205.13
+2025-04-04 12:20:00 - app.api.routes.home - INFO - Stock symbol: AAPL
+2025-04-04 12:20:07 - app.api.routes.home - DEBUG - 205.13
+2025-04-04 12:22:34 - app.api.routes.home - INFO - Stock symbol: AAPL
+2025-04-04 12:22:39 - app.api.routes.home - DEBUG - 205.13

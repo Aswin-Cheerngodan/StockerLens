@@ -1,0 +1,638 @@
+2025-04-04 12:06:23 - src.stock_price.components.price_predict - INFO - Loaded LSTM model from artifacts\models\stock_price\apple_model.keras
+2025-04-04 12:06:23 - src.stock_price.components.price_predict - INFO - Starting Price prediction for AAPL
+2025-04-04 12:06:23 - src.stock_price.components.data_ingestion - INFO - Initialized ingestion for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:06:23 - src.stock_price.components.data_ingestion - INFO - Starting full data ingestion and merging
+2025-04-04 12:06:23 - src.stock_price.components.data_ingestion - INFO - Fetching stock prices for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:06:30 - src.stock_price.components.data_ingestion - DEBUG - Stock data sample:
+Price            Close        High         Low        Open     Volume
+Date                                                                 
+2025-03-28  217.899994  223.809998  217.679993  221.669998   39818600
+2025-03-31  222.130005  225.619995  216.229996  217.009995   65299300
+2025-04-01  223.190002  223.679993  218.899994  219.809998   36412700
+2025-04-02  223.889999  225.190002  221.020004  221.320007   35905900
+2025-04-03  203.190002  207.490005  201.250000  205.539993  103204700
+2025-04-04 12:06:30 - src.stock_price.components.data_ingestion - INFO - Fetching sentiment scores for AAPL
+2025-04-04 12:06:32 - src.stock_price.components.data_ingestion - INFO - Merged data shape (22, 7)
+2025-04-04 12:06:32 - src.stock_price.components.data_ingestion - DEBUG - Merged data head
+         Date       Close        High         Low        Open    Volume  normalized
+0  2025-03-05  235.740005  236.550003  229.229996  235.419998  47227600      0.8068
+1  2025-03-06  235.330002  237.860001  233.160004  234.440002  45170400      0.8736
+2  2025-03-07  239.070007  241.369995  234.759995  235.110001  46273600      0.5587
+3  2025-03-10  227.479996  236.160004  224.220001  235.539993  72071200      0.7243
+4  2025-03-11  220.839996  225.839996  217.449997  223.809998  76137400      0.6609
+2025-04-04 12:06:32 - src.stock_price.components.data_preprocessing - INFO - Initialized DataPreprocessor with scaler path: artifacts\preprocessors\stock_price
+2025-04-04 12:06:32 - src.stock_price.components.data_preprocessing - INFO - Starting data preprocessing
+2025-04-04 12:06:32 - src.stock_price.components.data_preprocessing - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:06:32 - src.stock_price.components.data_preprocessing - INFO - Loaded scaler from artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:06:32 - src.stock_price.components.data_preprocessing - INFO - Preprocessed data shape: (22, 6)
+2025-04-04 12:06:32 - src.stock_price.components.data_preprocessing - DEBUG - Preprocessed data sample:
+         Open       Close        High         Low    Volume  normalized
+0  235.419998  235.740005  236.550003  229.229996  47227600      0.8068
+1  234.440002  235.330002  237.860001  233.160004  45170400      0.8736
+2  235.110001  239.070007  241.369995  234.759995  46273600      0.5587
+3  235.539993  227.479996  236.160004  224.220001  72071200      0.7243
+4  223.809998  220.839996  225.839996  217.449997  76137400      0.6609
+2025-04-04 12:06:32 - src.stock_price.components.price_predict - DEBUG - Prepared input data:
+[[[ 1.52295423  1.64914978  1.62142672  1.55692258 -0.02568645
+    0.44275559]
+  [ 1.70424926  1.69638434  1.67171461  1.69832426 -0.9787343
+   -0.11069521]
+  [ 1.69983219  1.75437176  1.72162173  1.72737939 -1.1662882
+    1.07757365]
+  [ 1.75245364  1.71174528  1.73914627  1.73493371 -1.16681418
+    1.27446703]
+  [ 1.71173919  1.75629199  1.73857484  1.73667694 -1.11653599
+    0.61508528]
+  [ 1.71711656  1.64204517  1.71609752  1.680891   -1.06443885
+    0.33260276]
+  [ 1.62762129  1.72326606  1.75057516  1.65280444 -0.57707873
+   -0.24157366]
+  [ 1.68139529  1.74361919  1.71362113  1.70452253 -1.12958227
+    0.21400616]
+  [ 1.71039499  1.7570599   1.74238447  1.74558731 -1.13927565
+   -0.04045839]
+  [ 1.40734019  1.35959704  1.40522704  1.36264065  0.14792413
+   -0.86909936]]]
+2025-04-04 12:06:33 - src.stock_price.components.price_predict - DEBUG - Normalized prediction: [1.3995097]
+2025-04-04 12:06:33 - src.stock_price.components.price_predict - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:06:33 - src.stock_price.components.price_predict - DEBUG - Predicted price: [205.13225953]
+2025-04-04 12:10:15 - src.stock_price.components.price_predict - INFO - Loaded LSTM model from artifacts\models\stock_price\apple_model.keras
+2025-04-04 12:10:15 - src.stock_price.components.price_predict - INFO - Starting Price prediction for AAPL
+2025-04-04 12:10:15 - src.stock_price.components.data_ingestion - INFO - Initialized ingestion for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:10:15 - src.stock_price.components.data_ingestion - INFO - Starting full data ingestion and merging
+2025-04-04 12:10:15 - src.stock_price.components.data_ingestion - INFO - Fetching stock prices for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:10:15 - src.stock_price.components.data_ingestion - DEBUG - Stock data sample:
+Price            Close        High         Low        Open     Volume
+Date                                                                 
+2025-03-28  217.899994  223.809998  217.679993  221.669998   39818600
+2025-03-31  222.130005  225.619995  216.229996  217.009995   65299300
+2025-04-01  223.190002  223.679993  218.899994  219.809998   36412700
+2025-04-02  223.889999  225.190002  221.020004  221.320007   35905900
+2025-04-03  203.190002  207.490005  201.250000  205.539993  103204700
+2025-04-04 12:10:15 - src.stock_price.components.data_ingestion - INFO - Fetching sentiment scores for AAPL
+2025-04-04 12:10:17 - src.stock_price.components.data_ingestion - INFO - Merged data shape (22, 7)
+2025-04-04 12:10:17 - src.stock_price.components.data_ingestion - DEBUG - Merged data head
+         Date       Close        High         Low        Open    Volume  normalized
+0  2025-03-05  235.740005  236.550003  229.229996  235.419998  47227600      0.8068
+1  2025-03-06  235.330002  237.860001  233.160004  234.440002  45170400      0.8736
+2  2025-03-07  239.070007  241.369995  234.759995  235.110001  46273600      0.5587
+3  2025-03-10  227.479996  236.160004  224.220001  235.539993  72071200      0.7243
+4  2025-03-11  220.839996  225.839996  217.449997  223.809998  76137400      0.6609
+2025-04-04 12:10:17 - src.stock_price.components.data_preprocessing - INFO - Initialized DataPreprocessor with scaler path: artifacts\preprocessors\stock_price
+2025-04-04 12:10:17 - src.stock_price.components.data_preprocessing - INFO - Starting data preprocessing
+2025-04-04 12:10:17 - src.stock_price.components.data_preprocessing - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:10:17 - src.stock_price.components.data_preprocessing - INFO - Loaded scaler from artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:10:17 - src.stock_price.components.data_preprocessing - INFO - Preprocessed data shape: (22, 6)
+2025-04-04 12:10:17 - src.stock_price.components.data_preprocessing - DEBUG - Preprocessed data sample:
+         Open       Close        High         Low    Volume  normalized
+0  235.419998  235.740005  236.550003  229.229996  47227600      0.8068
+1  234.440002  235.330002  237.860001  233.160004  45170400      0.8736
+2  235.110001  239.070007  241.369995  234.759995  46273600      0.5587
+3  235.539993  227.479996  236.160004  224.220001  72071200      0.7243
+4  223.809998  220.839996  225.839996  217.449997  76137400      0.6609
+2025-04-04 12:10:17 - src.stock_price.components.price_predict - DEBUG - Prepared input data:
+[[[ 1.52295423  1.64914978  1.62142672  1.55692258 -0.02568645
+    0.44275559]
+  [ 1.70424926  1.69638434  1.67171461  1.69832426 -0.9787343
+   -0.11069521]
+  [ 1.69983219  1.75437176  1.72162173  1.72737939 -1.1662882
+    1.07757365]
+  [ 1.75245364  1.71174528  1.73914627  1.73493371 -1.16681418
+    1.27446703]
+  [ 1.71173919  1.75629199  1.73857484  1.73667694 -1.11653599
+    0.61508528]
+  [ 1.71711656  1.64204517  1.71609752  1.680891   -1.06443885
+    0.33260276]
+  [ 1.62762129  1.72326606  1.75057516  1.65280444 -0.57707873
+   -0.24157366]
+  [ 1.68139529  1.74361919  1.71362113  1.70452253 -1.12958227
+    0.21400616]
+  [ 1.71039499  1.7570599   1.74238447  1.74558731 -1.13927565
+   -0.04045839]
+  [ 1.40734019  1.35959704  1.40522704  1.36264065  0.14792413
+   -0.86909936]]]
+2025-04-04 12:10:18 - src.stock_price.components.price_predict - DEBUG - Normalized prediction: [1.3995097]
+2025-04-04 12:10:18 - src.stock_price.components.price_predict - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:10:18 - src.stock_price.components.price_predict - DEBUG - Predicted price: [205.13225953]
+2025-04-04 12:10:47 - src.stock_price.components.price_predict - INFO - Loaded LSTM model from artifacts\models\stock_price\apple_model.keras
+2025-04-04 12:10:47 - src.stock_price.components.price_predict - INFO - Starting Price prediction for AAPL
+2025-04-04 12:10:47 - src.stock_price.components.data_ingestion - INFO - Initialized ingestion for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:10:47 - src.stock_price.components.data_ingestion - INFO - Starting full data ingestion and merging
+2025-04-04 12:10:47 - src.stock_price.components.data_ingestion - INFO - Fetching stock prices for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:10:47 - src.stock_price.components.data_ingestion - DEBUG - Stock data sample:
+Price            Close        High         Low        Open     Volume
+Date                                                                 
+2025-03-28  217.899994  223.809998  217.679993  221.669998   39818600
+2025-03-31  222.130005  225.619995  216.229996  217.009995   65299300
+2025-04-01  223.190002  223.679993  218.899994  219.809998   36412700
+2025-04-02  223.889999  225.190002  221.020004  221.320007   35905900
+2025-04-03  203.190002  207.490005  201.250000  205.539993  103204700
+2025-04-04 12:10:47 - src.stock_price.components.data_ingestion - INFO - Fetching sentiment scores for AAPL
+2025-04-04 12:10:48 - src.stock_price.components.data_ingestion - INFO - Merged data shape (22, 7)
+2025-04-04 12:10:48 - src.stock_price.components.data_ingestion - DEBUG - Merged data head
+         Date       Close        High         Low        Open    Volume  normalized
+0  2025-03-05  235.740005  236.550003  229.229996  235.419998  47227600      0.8068
+1  2025-03-06  235.330002  237.860001  233.160004  234.440002  45170400      0.8736
+2  2025-03-07  239.070007  241.369995  234.759995  235.110001  46273600      0.5587
+3  2025-03-10  227.479996  236.160004  224.220001  235.539993  72071200      0.7243
+4  2025-03-11  220.839996  225.839996  217.449997  223.809998  76137400      0.6609
+2025-04-04 12:10:48 - src.stock_price.components.data_preprocessing - INFO - Initialized DataPreprocessor with scaler path: artifacts\preprocessors\stock_price
+2025-04-04 12:10:48 - src.stock_price.components.data_preprocessing - INFO - Starting data preprocessing
+2025-04-04 12:10:48 - src.stock_price.components.data_preprocessing - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:10:48 - src.stock_price.components.data_preprocessing - INFO - Loaded scaler from artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:10:48 - src.stock_price.components.data_preprocessing - INFO - Preprocessed data shape: (22, 6)
+2025-04-04 12:10:48 - src.stock_price.components.data_preprocessing - DEBUG - Preprocessed data sample:
+         Open       Close        High         Low    Volume  normalized
+0  235.419998  235.740005  236.550003  229.229996  47227600      0.8068
+1  234.440002  235.330002  237.860001  233.160004  45170400      0.8736
+2  235.110001  239.070007  241.369995  234.759995  46273600      0.5587
+3  235.539993  227.479996  236.160004  224.220001  72071200      0.7243
+4  223.809998  220.839996  225.839996  217.449997  76137400      0.6609
+2025-04-04 12:10:48 - src.stock_price.components.price_predict - DEBUG - Prepared input data:
+[[[ 1.52295423  1.64914978  1.62142672  1.55692258 -0.02568645
+    0.44275559]
+  [ 1.70424926  1.69638434  1.67171461  1.69832426 -0.9787343
+   -0.11069521]
+  [ 1.69983219  1.75437176  1.72162173  1.72737939 -1.1662882
+    1.07757365]
+  [ 1.75245364  1.71174528  1.73914627  1.73493371 -1.16681418
+    1.27446703]
+  [ 1.71173919  1.75629199  1.73857484  1.73667694 -1.11653599
+    0.61508528]
+  [ 1.71711656  1.64204517  1.71609752  1.680891   -1.06443885
+    0.33260276]
+  [ 1.62762129  1.72326606  1.75057516  1.65280444 -0.57707873
+   -0.24157366]
+  [ 1.68139529  1.74361919  1.71362113  1.70452253 -1.12958227
+    0.21400616]
+  [ 1.71039499  1.7570599   1.74238447  1.74558731 -1.13927565
+   -0.04045839]
+  [ 1.40734019  1.35959704  1.40522704  1.36264065  0.14792413
+   -0.86909936]]]
+2025-04-04 12:10:49 - src.stock_price.components.price_predict - DEBUG - Normalized prediction: [1.3995097]
+2025-04-04 12:10:49 - src.stock_price.components.price_predict - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:10:49 - src.stock_price.components.price_predict - DEBUG - Predicted price: [205.13225953]
+2025-04-04 12:16:22 - src.stock_price.components.price_predict - INFO - Loaded LSTM model from artifacts\models\stock_price\apple_model.keras
+2025-04-04 12:16:22 - src.stock_price.components.price_predict - INFO - Starting Price prediction for AAPL
+2025-04-04 12:16:22 - src.stock_price.components.data_ingestion - INFO - Initialized ingestion for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:16:22 - src.stock_price.components.data_ingestion - INFO - Starting full data ingestion and merging
+2025-04-04 12:16:22 - src.stock_price.components.data_ingestion - INFO - Fetching stock prices for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:16:22 - src.stock_price.components.data_ingestion - DEBUG - Stock data sample:
+Price            Close        High         Low        Open     Volume
+Date                                                                 
+2025-03-28  217.899994  223.809998  217.679993  221.669998   39818600
+2025-03-31  222.130005  225.619995  216.229996  217.009995   65299300
+2025-04-01  223.190002  223.679993  218.899994  219.809998   36412700
+2025-04-02  223.889999  225.190002  221.020004  221.320007   35905900
+2025-04-03  203.190002  207.490005  201.250000  205.539993  103204700
+2025-04-04 12:16:22 - src.stock_price.components.data_ingestion - INFO - Fetching sentiment scores for AAPL
+2025-04-04 12:16:23 - src.stock_price.components.data_ingestion - INFO - Merged data shape (22, 7)
+2025-04-04 12:16:23 - src.stock_price.components.data_ingestion - DEBUG - Merged data head
+         Date       Close        High         Low        Open    Volume  normalized
+0  2025-03-05  235.740005  236.550003  229.229996  235.419998  47227600      0.8068
+1  2025-03-06  235.330002  237.860001  233.160004  234.440002  45170400      0.8736
+2  2025-03-07  239.070007  241.369995  234.759995  235.110001  46273600      0.5587
+3  2025-03-10  227.479996  236.160004  224.220001  235.539993  72071200      0.7243
+4  2025-03-11  220.839996  225.839996  217.449997  223.809998  76137400      0.6609
+2025-04-04 12:16:23 - src.stock_price.components.data_preprocessing - INFO - Initialized DataPreprocessor with scaler path: artifacts\preprocessors\stock_price
+2025-04-04 12:16:23 - src.stock_price.components.data_preprocessing - INFO - Starting data preprocessing
+2025-04-04 12:16:23 - src.stock_price.components.data_preprocessing - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:16:23 - src.stock_price.components.data_preprocessing - INFO - Loaded scaler from artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:16:23 - src.stock_price.components.data_preprocessing - INFO - Preprocessed data shape: (22, 6)
+2025-04-04 12:16:23 - src.stock_price.components.data_preprocessing - DEBUG - Preprocessed data sample:
+         Open       Close        High         Low    Volume  normalized
+0  235.419998  235.740005  236.550003  229.229996  47227600      0.8068
+1  234.440002  235.330002  237.860001  233.160004  45170400      0.8736
+2  235.110001  239.070007  241.369995  234.759995  46273600      0.5587
+3  235.539993  227.479996  236.160004  224.220001  72071200      0.7243
+4  223.809998  220.839996  225.839996  217.449997  76137400      0.6609
+2025-04-04 12:16:23 - src.stock_price.components.price_predict - DEBUG - Prepared input data:
+[[[ 1.52295423  1.64914978  1.62142672  1.55692258 -0.02568645
+    0.44275559]
+  [ 1.70424926  1.69638434  1.67171461  1.69832426 -0.9787343
+   -0.11069521]
+  [ 1.69983219  1.75437176  1.72162173  1.72737939 -1.1662882
+    1.07757365]
+  [ 1.75245364  1.71174528  1.73914627  1.73493371 -1.16681418
+    1.27446703]
+  [ 1.71173919  1.75629199  1.73857484  1.73667694 -1.11653599
+    0.61508528]
+  [ 1.71711656  1.64204517  1.71609752  1.680891   -1.06443885
+    0.33260276]
+  [ 1.62762129  1.72326606  1.75057516  1.65280444 -0.57707873
+   -0.24157366]
+  [ 1.68139529  1.74361919  1.71362113  1.70452253 -1.12958227
+    0.21400616]
+  [ 1.71039499  1.7570599   1.74238447  1.74558731 -1.13927565
+   -0.04045839]
+  [ 1.40734019  1.35959704  1.40522704  1.36264065  0.14792413
+   -0.86909936]]]
+2025-04-04 12:16:24 - src.stock_price.components.price_predict - DEBUG - Normalized prediction: [1.3995097]
+2025-04-04 12:16:24 - src.stock_price.components.price_predict - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:16:24 - src.stock_price.components.price_predict - DEBUG - Predicted price: [205.13225953]
+2025-04-04 12:16:34 - src.stock_price.components.price_predict - INFO - Loaded LSTM model from artifacts\models\stock_price\apple_model.keras
+2025-04-04 12:16:34 - src.stock_price.components.price_predict - INFO - Starting Price prediction for AAPL
+2025-04-04 12:16:34 - src.stock_price.components.data_ingestion - INFO - Initialized ingestion for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:16:34 - src.stock_price.components.data_ingestion - INFO - Starting full data ingestion and merging
+2025-04-04 12:16:34 - src.stock_price.components.data_ingestion - INFO - Fetching stock prices for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:16:34 - src.stock_price.components.data_ingestion - DEBUG - Stock data sample:
+Price            Close        High         Low        Open     Volume
+Date                                                                 
+2025-03-28  217.899994  223.809998  217.679993  221.669998   39818600
+2025-03-31  222.130005  225.619995  216.229996  217.009995   65299300
+2025-04-01  223.190002  223.679993  218.899994  219.809998   36412700
+2025-04-02  223.889999  225.190002  221.020004  221.320007   35905900
+2025-04-03  203.190002  207.490005  201.250000  205.539993  103204700
+2025-04-04 12:16:34 - src.stock_price.components.data_ingestion - INFO - Fetching sentiment scores for AAPL
+2025-04-04 12:16:36 - src.stock_price.components.data_ingestion - INFO - Merged data shape (22, 7)
+2025-04-04 12:16:36 - src.stock_price.components.data_ingestion - DEBUG - Merged data head
+         Date       Close        High         Low        Open    Volume  normalized
+0  2025-03-05  235.740005  236.550003  229.229996  235.419998  47227600      0.8068
+1  2025-03-06  235.330002  237.860001  233.160004  234.440002  45170400      0.8736
+2  2025-03-07  239.070007  241.369995  234.759995  235.110001  46273600      0.5587
+3  2025-03-10  227.479996  236.160004  224.220001  235.539993  72071200      0.7243
+4  2025-03-11  220.839996  225.839996  217.449997  223.809998  76137400      0.6609
+2025-04-04 12:16:36 - src.stock_price.components.data_preprocessing - INFO - Initialized DataPreprocessor with scaler path: artifacts\preprocessors\stock_price
+2025-04-04 12:16:36 - src.stock_price.components.data_preprocessing - INFO - Starting data preprocessing
+2025-04-04 12:16:36 - src.stock_price.components.data_preprocessing - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:16:36 - src.stock_price.components.data_preprocessing - INFO - Loaded scaler from artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:16:36 - src.stock_price.components.data_preprocessing - INFO - Preprocessed data shape: (22, 6)
+2025-04-04 12:16:36 - src.stock_price.components.data_preprocessing - DEBUG - Preprocessed data sample:
+         Open       Close        High         Low    Volume  normalized
+0  235.419998  235.740005  236.550003  229.229996  47227600      0.8068
+1  234.440002  235.330002  237.860001  233.160004  45170400      0.8736
+2  235.110001  239.070007  241.369995  234.759995  46273600      0.5587
+3  235.539993  227.479996  236.160004  224.220001  72071200      0.7243
+4  223.809998  220.839996  225.839996  217.449997  76137400      0.6609
+2025-04-04 12:16:36 - src.stock_price.components.price_predict - DEBUG - Prepared input data:
+[[[ 1.52295423  1.64914978  1.62142672  1.55692258 -0.02568645
+    0.44275559]
+  [ 1.70424926  1.69638434  1.67171461  1.69832426 -0.9787343
+   -0.11069521]
+  [ 1.69983219  1.75437176  1.72162173  1.72737939 -1.1662882
+    1.07757365]
+  [ 1.75245364  1.71174528  1.73914627  1.73493371 -1.16681418
+    1.27446703]
+  [ 1.71173919  1.75629199  1.73857484  1.73667694 -1.11653599
+    0.61508528]
+  [ 1.71711656  1.64204517  1.71609752  1.680891   -1.06443885
+    0.33260276]
+  [ 1.62762129  1.72326606  1.75057516  1.65280444 -0.57707873
+   -0.24157366]
+  [ 1.68139529  1.74361919  1.71362113  1.70452253 -1.12958227
+    0.21400616]
+  [ 1.71039499  1.7570599   1.74238447  1.74558731 -1.13927565
+   -0.04045839]
+  [ 1.40734019  1.35959704  1.40522704  1.36264065  0.14792413
+   -0.86909936]]]
+2025-04-04 12:16:36 - src.stock_price.components.price_predict - DEBUG - Normalized prediction: [1.3995097]
+2025-04-04 12:16:36 - src.stock_price.components.price_predict - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:16:36 - src.stock_price.components.price_predict - DEBUG - Predicted price: [205.13225953]
+2025-04-04 12:16:42 - src.stock_price.components.price_predict - INFO - Loaded LSTM model from artifacts\models\stock_price\microsoft_model.keras
+2025-04-04 12:16:42 - src.stock_price.components.price_predict - INFO - Starting Price prediction for MSFT
+2025-04-04 12:16:42 - src.stock_price.components.data_ingestion - INFO - Initialized ingestion for MSFT from 2025-03-05 to 2025-04-04
+2025-04-04 12:16:42 - src.stock_price.components.data_ingestion - INFO - Starting full data ingestion and merging
+2025-04-04 12:16:42 - src.stock_price.components.data_ingestion - INFO - Fetching stock prices for MSFT from 2025-03-05 to 2025-04-04
+2025-04-04 12:16:43 - src.stock_price.components.data_ingestion - DEBUG - Stock data sample:
+Price            Close        High         Low        Open    Volume
+Date                                                                
+2025-03-28  378.799988  389.130005  376.929993  388.079987  21632000
+2025-03-31  375.390015  377.070007  367.239990  372.540009  35184700
+2025-04-01  382.190002  382.850006  373.230011  374.649994  19689500
+2025-04-02  382.140015  385.079987  376.619995  377.970001  16092600
+2025-04-03  373.109985  377.480011  369.350006  374.790009  30147000
+2025-04-04 12:16:43 - src.stock_price.components.data_ingestion - INFO - Fetching sentiment scores for MSFT
+2025-04-04 12:16:44 - src.stock_price.components.data_ingestion - INFO - Merged data shape (22, 7)
+2025-04-04 12:16:44 - src.stock_price.components.data_ingestion - DEBUG - Merged data head
+         Date       Close        High         Low        Open    Volume  normalized
+0  2025-03-05  401.019989  401.670013  388.809998  389.339996  23433100      0.5772
+1  2025-03-06  396.890015  402.149994  392.679993  394.279999  23304600      0.3160
+2  2025-03-07  393.309998  394.799988  385.540009  392.320007  22034100      0.7371
+3  2025-03-10  380.160004  386.399994  377.220001  385.839996  32840100      0.6160
+4  2025-03-11  380.450012  386.000000  376.910004  379.000000  30380200      0.7168
+2025-04-04 12:16:44 - src.stock_price.components.data_preprocessing - INFO - Initialized DataPreprocessor with scaler path: artifacts\preprocessors\stock_price
+2025-04-04 12:16:44 - src.stock_price.components.data_preprocessing - INFO - Starting data preprocessing
+2025-04-04 12:16:44 - src.stock_price.components.data_preprocessing - INFO - Scaler path updated: artifacts\preprocessors\stock_price\microsoft_scaler.pkl
+2025-04-04 12:16:44 - src.stock_price.components.data_preprocessing - INFO - Loaded scaler from artifacts\preprocessors\stock_price\microsoft_scaler.pkl
+2025-04-04 12:16:44 - src.stock_price.components.data_preprocessing - INFO - Preprocessed data shape: (22, 6)
+2025-04-04 12:16:44 - src.stock_price.components.data_preprocessing - DEBUG - Preprocessed data sample:
+         Open       Close        High         Low    Volume  normalized
+0  389.339996  401.019989  401.670013  388.809998  23433100      0.5772
+1  394.279999  396.890015  402.149994  392.679993  23304600      0.3160
+2  392.320007  393.309998  394.799988  385.540009  22034100      0.7371
+3  385.839996  380.160004  386.399994  377.220001  32840100      0.6160
+4  379.000000  380.450012  386.000000  376.910004  30380200      0.7168
+2025-04-04 12:16:44 - src.stock_price.components.price_predict - DEBUG - Prepared input data:
+[[[ 1.34429787  1.43049189  1.40000518  1.37909514  0.94865623
+    0.88683299]
+  [ 1.47352156  1.44981919  1.43860361  1.45409001 -0.58573785
+    1.69892454]
+  [ 1.4578197   1.471908    1.44872769  1.48436625 -1.01549212
+    1.38195745]
+  [ 1.46927782  1.4167926   1.43765451  1.44082428 -0.98809369
+    1.22620638]
+  [ 1.41760959  1.42327036  1.40527818  1.42830718 -1.18052367
+   -0.10778789]
+  [ 1.39585991  1.29817227  1.37248025  1.31629644 -0.53417062
+   -0.21326142]
+  [ 1.23098844  1.26195994  1.24529542  1.21263034  0.5795746
+    0.51357692]
+  [ 1.25337434  1.33417264  1.30625133  1.2767131  -0.69380303
+    0.32831511]
+  [ 1.28859797  1.33364179  1.32976873  1.31298001 -0.98939212
+    0.26164273]
+  [ 1.25485982  1.23774709  1.24961932  1.23520382  0.16558224
+   -2.26043164]]]
+2025-04-04 12:16:45 - src.stock_price.components.price_predict - DEBUG - Normalized prediction: [1.277327]
+2025-04-04 12:16:45 - src.stock_price.components.price_predict - INFO - Scaler path updated: artifacts\preprocessors\stock_price\microsoft_scaler.pkl
+2025-04-04 12:16:45 - src.stock_price.components.price_predict - DEBUG - Predicted price: [376.90764913]
+2025-04-04 12:19:30 - src.stock_price.components.price_predict - INFO - Loaded LSTM model from artifacts\models\stock_price\microsoft_model.keras
+2025-04-04 12:19:30 - src.stock_price.components.price_predict - INFO - Starting Price prediction for MSFT
+2025-04-04 12:19:30 - src.stock_price.components.data_ingestion - INFO - Initialized ingestion for MSFT from 2025-03-05 to 2025-04-04
+2025-04-04 12:19:30 - src.stock_price.components.data_ingestion - INFO - Starting full data ingestion and merging
+2025-04-04 12:19:30 - src.stock_price.components.data_ingestion - INFO - Fetching stock prices for MSFT from 2025-03-05 to 2025-04-04
+2025-04-04 12:19:30 - src.stock_price.components.data_ingestion - DEBUG - Stock data sample:
+Price            Close        High         Low        Open    Volume
+Date                                                                
+2025-03-28  378.799988  389.130005  376.929993  388.079987  21632000
+2025-03-31  375.390015  377.070007  367.239990  372.540009  35184700
+2025-04-01  382.190002  382.850006  373.230011  374.649994  19689500
+2025-04-02  382.140015  385.079987  376.619995  377.970001  16092600
+2025-04-03  373.109985  377.480011  369.350006  374.790009  30147000
+2025-04-04 12:19:30 - src.stock_price.components.data_ingestion - INFO - Fetching sentiment scores for MSFT
+2025-04-04 12:19:31 - src.stock_price.components.data_ingestion - INFO - Merged data shape (22, 7)
+2025-04-04 12:19:31 - src.stock_price.components.data_ingestion - DEBUG - Merged data head
+         Date       Close        High         Low        Open    Volume  normalized
+0  2025-03-05  401.019989  401.670013  388.809998  389.339996  23433100      0.5772
+1  2025-03-06  396.890015  402.149994  392.679993  394.279999  23304600      0.3160
+2  2025-03-07  393.309998  394.799988  385.540009  392.320007  22034100      0.7371
+3  2025-03-10  380.160004  386.399994  377.220001  385.839996  32840100      0.6160
+4  2025-03-11  380.450012  386.000000  376.910004  379.000000  30380200      0.7168
+2025-04-04 12:19:31 - src.stock_price.components.data_preprocessing - INFO - Initialized DataPreprocessor with scaler path: artifacts\preprocessors\stock_price
+2025-04-04 12:19:31 - src.stock_price.components.data_preprocessing - INFO - Starting data preprocessing
+2025-04-04 12:19:31 - src.stock_price.components.data_preprocessing - INFO - Scaler path updated: artifacts\preprocessors\stock_price\microsoft_scaler.pkl
+2025-04-04 12:19:31 - src.stock_price.components.data_preprocessing - INFO - Loaded scaler from artifacts\preprocessors\stock_price\microsoft_scaler.pkl
+2025-04-04 12:19:31 - src.stock_price.components.data_preprocessing - INFO - Preprocessed data shape: (22, 6)
+2025-04-04 12:19:31 - src.stock_price.components.data_preprocessing - DEBUG - Preprocessed data sample:
+         Open       Close        High         Low    Volume  normalized
+0  389.339996  401.019989  401.670013  388.809998  23433100      0.5772
+1  394.279999  396.890015  402.149994  392.679993  23304600      0.3160
+2  392.320007  393.309998  394.799988  385.540009  22034100      0.7371
+3  385.839996  380.160004  386.399994  377.220001  32840100      0.6160
+4  379.000000  380.450012  386.000000  376.910004  30380200      0.7168
+2025-04-04 12:19:31 - src.stock_price.components.price_predict - DEBUG - Prepared input data:
+[[[ 1.34429787  1.43049189  1.40000518  1.37909514  0.94865623
+    0.88683299]
+  [ 1.47352156  1.44981919  1.43860361  1.45409001 -0.58573785
+    1.69892454]
+  [ 1.4578197   1.471908    1.44872769  1.48436625 -1.01549212
+    1.38195745]
+  [ 1.46927782  1.4167926   1.43765451  1.44082428 -0.98809369
+    1.22620638]
+  [ 1.41760959  1.42327036  1.40527818  1.42830718 -1.18052367
+   -0.10778789]
+  [ 1.39585991  1.29817227  1.37248025  1.31629644 -0.53417062
+   -0.21326142]
+  [ 1.23098844  1.26195994  1.24529542  1.21263034  0.5795746
+    0.51357692]
+  [ 1.25337434  1.33417264  1.30625133  1.2767131  -0.69380303
+    0.32831511]
+  [ 1.28859797  1.33364179  1.32976873  1.31298001 -0.98939212
+    0.26164273]
+  [ 1.25485982  1.23774709  1.24961932  1.23520382  0.16558224
+   -2.26043164]]]
+2025-04-04 12:19:32 - src.stock_price.components.price_predict - DEBUG - Normalized prediction: [1.277327]
+2025-04-04 12:19:32 - src.stock_price.components.price_predict - INFO - Scaler path updated: artifacts\preprocessors\stock_price\microsoft_scaler.pkl
+2025-04-04 12:19:32 - src.stock_price.components.price_predict - DEBUG - Predicted price: [376.90764913]
+2025-04-04 12:19:39 - src.stock_price.components.price_predict - INFO - Loaded LSTM model from artifacts\models\stock_price\apple_model.keras
+2025-04-04 12:19:39 - src.stock_price.components.price_predict - INFO - Starting Price prediction for AAPL
+2025-04-04 12:19:39 - src.stock_price.components.data_ingestion - INFO - Initialized ingestion for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:19:39 - src.stock_price.components.data_ingestion - INFO - Starting full data ingestion and merging
+2025-04-04 12:19:39 - src.stock_price.components.data_ingestion - INFO - Fetching stock prices for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:19:39 - src.stock_price.components.data_ingestion - DEBUG - Stock data sample:
+Price            Close        High         Low        Open     Volume
+Date                                                                 
+2025-03-28  217.899994  223.809998  217.679993  221.669998   39818600
+2025-03-31  222.130005  225.619995  216.229996  217.009995   65299300
+2025-04-01  223.190002  223.679993  218.899994  219.809998   36412700
+2025-04-02  223.889999  225.190002  221.020004  221.320007   35905900
+2025-04-03  203.190002  207.490005  201.250000  205.539993  103204700
+2025-04-04 12:19:39 - src.stock_price.components.data_ingestion - INFO - Fetching sentiment scores for AAPL
+2025-04-04 12:19:41 - src.stock_price.components.data_ingestion - INFO - Merged data shape (22, 7)
+2025-04-04 12:19:41 - src.stock_price.components.data_ingestion - DEBUG - Merged data head
+         Date       Close        High         Low        Open    Volume  normalized
+0  2025-03-05  235.740005  236.550003  229.229996  235.419998  47227600      0.8068
+1  2025-03-06  235.330002  237.860001  233.160004  234.440002  45170400      0.8736
+2  2025-03-07  239.070007  241.369995  234.759995  235.110001  46273600      0.5587
+3  2025-03-10  227.479996  236.160004  224.220001  235.539993  72071200      0.7243
+4  2025-03-11  220.839996  225.839996  217.449997  223.809998  76137400      0.6609
+2025-04-04 12:19:41 - src.stock_price.components.data_preprocessing - INFO - Initialized DataPreprocessor with scaler path: artifacts\preprocessors\stock_price
+2025-04-04 12:19:41 - src.stock_price.components.data_preprocessing - INFO - Starting data preprocessing
+2025-04-04 12:19:41 - src.stock_price.components.data_preprocessing - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:19:41 - src.stock_price.components.data_preprocessing - INFO - Loaded scaler from artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:19:41 - src.stock_price.components.data_preprocessing - INFO - Preprocessed data shape: (22, 6)
+2025-04-04 12:19:41 - src.stock_price.components.data_preprocessing - DEBUG - Preprocessed data sample:
+         Open       Close        High         Low    Volume  normalized
+0  235.419998  235.740005  236.550003  229.229996  47227600      0.8068
+1  234.440002  235.330002  237.860001  233.160004  45170400      0.8736
+2  235.110001  239.070007  241.369995  234.759995  46273600      0.5587
+3  235.539993  227.479996  236.160004  224.220001  72071200      0.7243
+4  223.809998  220.839996  225.839996  217.449997  76137400      0.6609
+2025-04-04 12:19:41 - src.stock_price.components.price_predict - DEBUG - Prepared input data:
+[[[ 1.52295423  1.64914978  1.62142672  1.55692258 -0.02568645
+    0.44275559]
+  [ 1.70424926  1.69638434  1.67171461  1.69832426 -0.9787343
+   -0.11069521]
+  [ 1.69983219  1.75437176  1.72162173  1.72737939 -1.1662882
+    1.07757365]
+  [ 1.75245364  1.71174528  1.73914627  1.73493371 -1.16681418
+    1.27446703]
+  [ 1.71173919  1.75629199  1.73857484  1.73667694 -1.11653599
+    0.61508528]
+  [ 1.71711656  1.64204517  1.71609752  1.680891   -1.06443885
+    0.33260276]
+  [ 1.62762129  1.72326606  1.75057516  1.65280444 -0.57707873
+   -0.24157366]
+  [ 1.68139529  1.74361919  1.71362113  1.70452253 -1.12958227
+    0.21400616]
+  [ 1.71039499  1.7570599   1.74238447  1.74558731 -1.13927565
+   -0.04045839]
+  [ 1.40734019  1.35959704  1.40522704  1.36264065  0.14792413
+   -0.86909936]]]
+2025-04-04 12:19:42 - src.stock_price.components.price_predict - DEBUG - Normalized prediction: [1.3995097]
+2025-04-04 12:19:42 - src.stock_price.components.price_predict - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:19:42 - src.stock_price.components.price_predict - DEBUG - Predicted price: [205.13225953]
+2025-04-04 12:19:51 - src.stock_price.components.price_predict - INFO - Loaded LSTM model from artifacts\models\stock_price\apple_model.keras
+2025-04-04 12:19:51 - src.stock_price.components.price_predict - INFO - Starting Price prediction for AAPL
+2025-04-04 12:19:51 - src.stock_price.components.data_ingestion - INFO - Initialized ingestion for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:19:51 - src.stock_price.components.data_ingestion - INFO - Starting full data ingestion and merging
+2025-04-04 12:19:51 - src.stock_price.components.data_ingestion - INFO - Fetching stock prices for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:19:51 - src.stock_price.components.data_ingestion - DEBUG - Stock data sample:
+Price            Close        High         Low        Open     Volume
+Date                                                                 
+2025-03-28  217.899994  223.809998  217.679993  221.669998   39818600
+2025-03-31  222.130005  225.619995  216.229996  217.009995   65299300
+2025-04-01  223.190002  223.679993  218.899994  219.809998   36412700
+2025-04-02  223.889999  225.190002  221.020004  221.320007   35905900
+2025-04-03  203.190002  207.490005  201.250000  205.539993  103204700
+2025-04-04 12:19:51 - src.stock_price.components.data_ingestion - INFO - Fetching sentiment scores for AAPL
+2025-04-04 12:19:52 - src.stock_price.components.data_ingestion - INFO - Merged data shape (22, 7)
+2025-04-04 12:19:52 - src.stock_price.components.data_ingestion - DEBUG - Merged data head
+         Date       Close        High         Low        Open    Volume  normalized
+0  2025-03-05  235.740005  236.550003  229.229996  235.419998  47227600      0.8068
+1  2025-03-06  235.330002  237.860001  233.160004  234.440002  45170400      0.8736
+2  2025-03-07  239.070007  241.369995  234.759995  235.110001  46273600      0.5587
+3  2025-03-10  227.479996  236.160004  224.220001  235.539993  72071200      0.7243
+4  2025-03-11  220.839996  225.839996  217.449997  223.809998  76137400      0.6609
+2025-04-04 12:19:52 - src.stock_price.components.data_preprocessing - INFO - Initialized DataPreprocessor with scaler path: artifacts\preprocessors\stock_price
+2025-04-04 12:19:52 - src.stock_price.components.data_preprocessing - INFO - Starting data preprocessing
+2025-04-04 12:19:52 - src.stock_price.components.data_preprocessing - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:19:52 - src.stock_price.components.data_preprocessing - INFO - Loaded scaler from artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:19:52 - src.stock_price.components.data_preprocessing - INFO - Preprocessed data shape: (22, 6)
+2025-04-04 12:19:52 - src.stock_price.components.data_preprocessing - DEBUG - Preprocessed data sample:
+         Open       Close        High         Low    Volume  normalized
+0  235.419998  235.740005  236.550003  229.229996  47227600      0.8068
+1  234.440002  235.330002  237.860001  233.160004  45170400      0.8736
+2  235.110001  239.070007  241.369995  234.759995  46273600      0.5587
+3  235.539993  227.479996  236.160004  224.220001  72071200      0.7243
+4  223.809998  220.839996  225.839996  217.449997  76137400      0.6609
+2025-04-04 12:19:52 - src.stock_price.components.price_predict - DEBUG - Prepared input data:
+[[[ 1.52295423  1.64914978  1.62142672  1.55692258 -0.02568645
+    0.44275559]
+  [ 1.70424926  1.69638434  1.67171461  1.69832426 -0.9787343
+   -0.11069521]
+  [ 1.69983219  1.75437176  1.72162173  1.72737939 -1.1662882
+    1.07757365]
+  [ 1.75245364  1.71174528  1.73914627  1.73493371 -1.16681418
+    1.27446703]
+  [ 1.71173919  1.75629199  1.73857484  1.73667694 -1.11653599
+    0.61508528]
+  [ 1.71711656  1.64204517  1.71609752  1.680891   -1.06443885
+    0.33260276]
+  [ 1.62762129  1.72326606  1.75057516  1.65280444 -0.57707873
+   -0.24157366]
+  [ 1.68139529  1.74361919  1.71362113  1.70452253 -1.12958227
+    0.21400616]
+  [ 1.71039499  1.7570599   1.74238447  1.74558731 -1.13927565
+   -0.04045839]
+  [ 1.40734019  1.35959704  1.40522704  1.36264065  0.14792413
+   -0.86909936]]]
+2025-04-04 12:19:53 - src.stock_price.components.price_predict - DEBUG - Normalized prediction: [1.3995097]
+2025-04-04 12:19:53 - src.stock_price.components.price_predict - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:19:53 - src.stock_price.components.price_predict - DEBUG - Predicted price: [205.13225953]
+2025-04-04 12:20:05 - src.stock_price.components.price_predict - INFO - Loaded LSTM model from artifacts\models\stock_price\apple_model.keras
+2025-04-04 12:20:05 - src.stock_price.components.price_predict - INFO - Starting Price prediction for AAPL
+2025-04-04 12:20:05 - src.stock_price.components.data_ingestion - INFO - Initialized ingestion for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:20:05 - src.stock_price.components.data_ingestion - INFO - Starting full data ingestion and merging
+2025-04-04 12:20:05 - src.stock_price.components.data_ingestion - INFO - Fetching stock prices for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:20:05 - src.stock_price.components.data_ingestion - DEBUG - Stock data sample:
+Price            Close        High         Low        Open     Volume
+Date                                                                 
+2025-03-28  217.899994  223.809998  217.679993  221.669998   39818600
+2025-03-31  222.130005  225.619995  216.229996  217.009995   65299300
+2025-04-01  223.190002  223.679993  218.899994  219.809998   36412700
+2025-04-02  223.889999  225.190002  221.020004  221.320007   35905900
+2025-04-03  203.190002  207.490005  201.250000  205.539993  103204700
+2025-04-04 12:20:05 - src.stock_price.components.data_ingestion - INFO - Fetching sentiment scores for AAPL
+2025-04-04 12:20:06 - src.stock_price.components.data_ingestion - INFO - Merged data shape (22, 7)
+2025-04-04 12:20:06 - src.stock_price.components.data_ingestion - DEBUG - Merged data head
+         Date       Close        High         Low        Open    Volume  normalized
+0  2025-03-05  235.740005  236.550003  229.229996  235.419998  47227600      0.8068
+1  2025-03-06  235.330002  237.860001  233.160004  234.440002  45170400      0.8736
+2  2025-03-07  239.070007  241.369995  234.759995  235.110001  46273600      0.5587
+3  2025-03-10  227.479996  236.160004  224.220001  235.539993  72071200      0.7243
+4  2025-03-11  220.839996  225.839996  217.449997  223.809998  76137400      0.6609
+2025-04-04 12:20:06 - src.stock_price.components.data_preprocessing - INFO - Initialized DataPreprocessor with scaler path: artifacts\preprocessors\stock_price
+2025-04-04 12:20:06 - src.stock_price.components.data_preprocessing - INFO - Starting data preprocessing
+2025-04-04 12:20:06 - src.stock_price.components.data_preprocessing - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:20:06 - src.stock_price.components.data_preprocessing - INFO - Loaded scaler from artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:20:06 - src.stock_price.components.data_preprocessing - INFO - Preprocessed data shape: (22, 6)
+2025-04-04 12:20:06 - src.stock_price.components.data_preprocessing - DEBUG - Preprocessed data sample:
+         Open       Close        High         Low    Volume  normalized
+0  235.419998  235.740005  236.550003  229.229996  47227600      0.8068
+1  234.440002  235.330002  237.860001  233.160004  45170400      0.8736
+2  235.110001  239.070007  241.369995  234.759995  46273600      0.5587
+3  235.539993  227.479996  236.160004  224.220001  72071200      0.7243
+4  223.809998  220.839996  225.839996  217.449997  76137400      0.6609
+2025-04-04 12:20:06 - src.stock_price.components.price_predict - DEBUG - Prepared input data:
+[[[ 1.52295423  1.64914978  1.62142672  1.55692258 -0.02568645
+    0.44275559]
+  [ 1.70424926  1.69638434  1.67171461  1.69832426 -0.9787343
+   -0.11069521]
+  [ 1.69983219  1.75437176  1.72162173  1.72737939 -1.1662882
+    1.07757365]
+  [ 1.75245364  1.71174528  1.73914627  1.73493371 -1.16681418
+    1.27446703]
+  [ 1.71173919  1.75629199  1.73857484  1.73667694 -1.11653599
+    0.61508528]
+  [ 1.71711656  1.64204517  1.71609752  1.680891   -1.06443885
+    0.33260276]
+  [ 1.62762129  1.72326606  1.75057516  1.65280444 -0.57707873
+   -0.24157366]
+  [ 1.68139529  1.74361919  1.71362113  1.70452253 -1.12958227
+    0.21400616]
+  [ 1.71039499  1.7570599   1.74238447  1.74558731 -1.13927565
+   -0.04045839]
+  [ 1.40734019  1.35959704  1.40522704  1.36264065  0.14792413
+   -0.86909936]]]
+2025-04-04 12:20:07 - src.stock_price.components.price_predict - DEBUG - Normalized prediction: [1.3995097]
+2025-04-04 12:20:07 - src.stock_price.components.price_predict - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:20:07 - src.stock_price.components.price_predict - DEBUG - Predicted price: [205.13225953]
+2025-04-04 12:22:37 - src.stock_price.components.price_predict - INFO - Loaded LSTM model from artifacts\models\stock_price\apple_model.keras
+2025-04-04 12:22:37 - src.stock_price.components.price_predict - INFO - Starting Price prediction for AAPL
+2025-04-04 12:22:37 - src.stock_price.components.data_ingestion - INFO - Initialized ingestion for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:22:37 - src.stock_price.components.data_ingestion - INFO - Starting full data ingestion and merging
+2025-04-04 12:22:37 - src.stock_price.components.data_ingestion - INFO - Fetching stock prices for AAPL from 2025-03-05 to 2025-04-04
+2025-04-04 12:22:37 - src.stock_price.components.data_ingestion - DEBUG - Stock data sample:
+Price            Close        High         Low        Open     Volume
+Date                                                                 
+2025-03-28  217.899994  223.809998  217.679993  221.669998   39818600
+2025-03-31  222.130005  225.619995  216.229996  217.009995   65299300
+2025-04-01  223.190002  223.679993  218.899994  219.809998   36412700
+2025-04-02  223.889999  225.190002  221.020004  221.320007   35905900
+2025-04-03  203.190002  207.490005  201.250000  205.539993  103204700
+2025-04-04 12:22:37 - src.stock_price.components.data_ingestion - INFO - Fetching sentiment scores for AAPL
+2025-04-04 12:22:38 - src.stock_price.components.data_ingestion - INFO - Merged data shape (22, 7)
+2025-04-04 12:22:38 - src.stock_price.components.data_ingestion - DEBUG - Merged data head
+         Date       Close        High         Low        Open    Volume  normalized
+0  2025-03-05  235.740005  236.550003  229.229996  235.419998  47227600      0.8068
+1  2025-03-06  235.330002  237.860001  233.160004  234.440002  45170400      0.8736
+2  2025-03-07  239.070007  241.369995  234.759995  235.110001  46273600      0.5587
+3  2025-03-10  227.479996  236.160004  224.220001  235.539993  72071200      0.7243
+4  2025-03-11  220.839996  225.839996  217.449997  223.809998  76137400      0.6609
+2025-04-04 12:22:38 - src.stock_price.components.data_preprocessing - INFO - Initialized DataPreprocessor with scaler path: artifacts\preprocessors\stock_price
+2025-04-04 12:22:38 - src.stock_price.components.data_preprocessing - INFO - Starting data preprocessing
+2025-04-04 12:22:38 - src.stock_price.components.data_preprocessing - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:22:38 - src.stock_price.components.data_preprocessing - INFO - Loaded scaler from artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:22:38 - src.stock_price.components.data_preprocessing - INFO - Preprocessed data shape: (22, 6)
+2025-04-04 12:22:38 - src.stock_price.components.data_preprocessing - DEBUG - Preprocessed data sample:
+         Open       Close        High         Low    Volume  normalized
+0  235.419998  235.740005  236.550003  229.229996  47227600      0.8068
+1  234.440002  235.330002  237.860001  233.160004  45170400      0.8736
+2  235.110001  239.070007  241.369995  234.759995  46273600      0.5587
+3  235.539993  227.479996  236.160004  224.220001  72071200      0.7243
+4  223.809998  220.839996  225.839996  217.449997  76137400      0.6609
+2025-04-04 12:22:38 - src.stock_price.components.price_predict - DEBUG - Prepared input data:
+[[[ 1.52295423  1.64914978  1.62142672  1.55692258 -0.02568645
+    0.44275559]
+  [ 1.70424926  1.69638434  1.67171461  1.69832426 -0.9787343
+   -0.11069521]
+  [ 1.69983219  1.75437176  1.72162173  1.72737939 -1.1662882
+    1.07757365]
+  [ 1.75245364  1.71174528  1.73914627  1.73493371 -1.16681418
+    1.27446703]
+  [ 1.71173919  1.75629199  1.73857484  1.73667694 -1.11653599
+    0.61508528]
+  [ 1.71711656  1.64204517  1.71609752  1.680891   -1.06443885
+    0.33260276]
+  [ 1.62762129  1.72326606  1.75057516  1.65280444 -0.57707873
+   -0.24157366]
+  [ 1.68139529  1.74361919  1.71362113  1.70452253 -1.12958227
+    0.21400616]
+  [ 1.71039499  1.7570599   1.74238447  1.74558731 -1.13927565
+   -0.04045839]
+  [ 1.40734019  1.35959704  1.40522704  1.36264065  0.14792413
+   -0.86909936]]]
+2025-04-04 12:22:39 - src.stock_price.components.price_predict - DEBUG - Normalized prediction: [1.3995097]
+2025-04-04 12:22:39 - src.stock_price.components.price_predict - INFO - Scaler path updated: artifacts\preprocessors\stock_price\apple_scaler.pkl
+2025-04-04 12:22:39 - src.stock_price.components.price_predict - DEBUG - Predicted price: [205.13225953]
