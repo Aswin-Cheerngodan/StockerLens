@@ -3,8 +3,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from src.utils.logger import setup_logger
 from src.stock_price.pipeline.predict_pipeline import predictionPipeline
-from src.chart_trend.components.data_ingestion import DataIngestion
-from src.chart_trend.components.data_preprocessing import DataPreprocessor
+from src.chart_trend.pipeline.predict_pipeline import TrendClassifier
 
 logger = setup_logger(__name__, "logs/app.log")
 
@@ -54,13 +53,11 @@ async def analyze_news_sentiment(stock: str = Form(...)):
 async def analyze_chart_trend(file: UploadFile = File(...)):
     """Handle chart image upload and predict the trend."""
     # Ingest the image
-    ingestor = DataIngestion()
-    image_path = ingestor.ingest_image(file)
-    preporcessor = DataPreprocessor(image_path)
-    img_arr = preporcessor.preprocess()
-    sentiment = "good"
+    classifier = TrendClassifier(file)
+    trend = classifier.classify()
+    trend = str(trend)
     return {
             "status": "success",
             "filename": file.filename,
-            "trend": sentiment
+            "trend": trend
         }

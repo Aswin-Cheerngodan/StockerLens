@@ -22,3 +22,10 @@
 2025-04-04 12:20:07 - app.api.routes.home - DEBUG - 205.13
 2025-04-04 12:22:34 - app.api.routes.home - INFO - Stock symbol: AAPL
 2025-04-04 12:22:39 - app.api.routes.home - DEBUG - 205.13
+2025-04-05 10:22:43 - app.api.routes.home - INFO - Stock symbol: AAPL
+2025-04-05 10:22:55 - app.api.routes.home - DEBUG - 192.86
+2025-04-05 10:23:04 - app.api.routes.home - INFO - Stock symbol: MSFT
+2025-04-05 10:23:09 - app.api.routes.home - DEBUG - 366.49
+2025-04-05 10:23:21 - app.api.routes.home - INFO - Stock symbol: MSFT
+2025-04-05 10:23:25 - app.api.routes.home - DEBUG - 366.49
+2025-04-05 10:26:49 - app.api.routes.home - INFO - Stock symbol: Microsoft

@@ -34,3 +34,44 @@ FileNotFoundError: [Errno 2] No such file or directory: 'NO'
 2025-04-04 21:17:51 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
 2025-04-04 21:17:51 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\5a540ef082484d399cb1aa2140d02361_Screenshot (1).png
 2025-04-04 21:17:51 - src.chart_trend.components.data_preprocessing - DEBUG - Preprocessed image shape: (1, 224, 224, 3)
+2025-04-05 10:04:29 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-05 10:04:29 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\fbcef598ff0c40b7878bfbeca2d43bdc_4.double-bottom-chart-pattern.jpg
+2025-04-05 10:04:29 - src.chart_trend.pipeline.predict_pipeline - INFO - File path saved and updated app\static\uploads\fbcef598ff0c40b7878bfbeca2d43bdc_4.double-bottom-chart-pattern.jpg
+2025-04-05 10:04:29 - src.chart_trend.components.data_preprocessing - DEBUG - Preprocessed image shape: (1, 224, 224, 3)
+2025-04-05 10:04:29 - src.chart_trend.pipeline.predict_pipeline - INFO - Image preprocessing completed (1, 224, 224, 3)
+2025-04-05 10:04:31 - src.chart_trend.components.chart_classifier - INFO - CNN model loaded from artifacts\models\chart_trend\chart_trend_model.keras
+2025-04-05 10:04:32 - src.chart_trend.components.chart_classifier - ERROR - Error while prediction: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "D:\Capstone Projects\StockerLens\src\chart_trend\components\chart_classifier.py", line 48, in _classify
+    if not pred:
+           ^^^^
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2025-04-05 10:04:32 - src.chart_trend.pipeline.predict_pipeline - INFO - Image classification completed.
+2025-04-05 10:11:17 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-05 10:11:17 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\0f5a118b117a4d9b93df0fef72aedfe1_4.double-bottom-chart-pattern.jpg
+2025-04-05 10:11:17 - src.chart_trend.pipeline.predict_pipeline - INFO - File path saved and updated app\static\uploads\0f5a118b117a4d9b93df0fef72aedfe1_4.double-bottom-chart-pattern.jpg
+2025-04-05 10:11:17 - src.chart_trend.components.data_preprocessing - DEBUG - Preprocessed image shape: (1, 224, 224, 3)
+2025-04-05 10:11:17 - src.chart_trend.pipeline.predict_pipeline - INFO - Image preprocessing completed (1, 224, 224, 3)
+2025-04-05 10:11:19 - src.chart_trend.components.chart_classifier - INFO - CNN model loaded from artifacts\models\chart_trend\chart_trend_model.keras
+2025-04-05 10:11:20 - src.chart_trend.pipeline.predict_pipeline - INFO - Image classification completed.
+2025-04-05 10:17:22 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-05 10:17:22 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\7029aea77c564a8ca523f18e9c1c0aef_grade7-double-top-before.png
+2025-04-05 10:17:22 - src.chart_trend.pipeline.predict_pipeline - INFO - File path saved and updated app\static\uploads\7029aea77c564a8ca523f18e9c1c0aef_grade7-double-top-before.png
+2025-04-05 10:17:22 - src.chart_trend.components.data_preprocessing - DEBUG - Preprocessed image shape: (1, 224, 224, 3)
+2025-04-05 10:17:22 - src.chart_trend.pipeline.predict_pipeline - INFO - Image preprocessing completed (1, 224, 224, 3)
+2025-04-05 10:17:23 - src.chart_trend.components.chart_classifier - INFO - CNN model loaded from artifacts\models\chart_trend\chart_trend_model.keras
+2025-04-05 10:17:24 - src.chart_trend.pipeline.predict_pipeline - INFO - Image classification completed.
+2025-04-05 10:19:55 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-05 10:19:55 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\8fbd2ed6fcce45a8b17b82877f514f08_4.double-bottom-chart-pattern.jpg
+2025-04-05 10:19:55 - src.chart_trend.pipeline.predict_pipeline - INFO - File path saved and updated app\static\uploads\8fbd2ed6fcce45a8b17b82877f514f08_4.double-bottom-chart-pattern.jpg
+2025-04-05 10:19:55 - src.chart_trend.components.data_preprocessing - DEBUG - Preprocessed image shape: (1, 224, 224, 3)
+2025-04-05 10:19:55 - src.chart_trend.pipeline.predict_pipeline - INFO - Image preprocessing completed (1, 224, 224, 3)
+2025-04-05 10:19:57 - src.chart_trend.components.chart_classifier - INFO - CNN model loaded from artifacts\models\chart_trend\chart_trend_model.keras
+2025-04-05 10:19:57 - src.chart_trend.pipeline.predict_pipeline - INFO - Image classification completed.
+2025-04-05 10:21:56 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-05 10:21:56 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\9c6349e72aa64eaeb31c5314ddc6449c_4.double-bottom-chart-pattern.jpg
+2025-04-05 10:21:56 - src.chart_trend.pipeline.predict_pipeline - INFO - File path saved and updated app\static\uploads\9c6349e72aa64eaeb31c5314ddc6449c_4.double-bottom-chart-pattern.jpg
+2025-04-05 10:21:56 - src.chart_trend.components.data_preprocessing - DEBUG - Preprocessed image shape: (1, 224, 224, 3)
+2025-04-05 10:21:56 - src.chart_trend.pipeline.predict_pipeline - INFO - Image preprocessing completed (1, 224, 224, 3)
+2025-04-05 10:21:57 - src.chart_trend.components.chart_classifier - INFO - CNN model loaded from artifacts\models\chart_trend\chart_trend_model.keras
+2025-04-05 10:21:58 - src.chart_trend.pipeline.predict_pipeline - INFO - Image classification completed.
