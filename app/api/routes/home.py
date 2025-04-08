@@ -4,6 +4,7 @@ from fastapi.responses import HTMLResponse
 from src.utils.logger import setup_logger
 from src.stock_price.pipeline.predict_pipeline import predictionPipeline
 from src.chart_trend.pipeline.predict_pipeline import TrendClassifier
+from src.sentiment_analysis.pipeline.predict_pipeline import SentimentPredictPipeline
 
 logger = setup_logger(__name__, "logs/app.log")
 
@@ -39,11 +40,12 @@ async def predict_stock_price(stock_symbol: str = Form(...)):
 async def analyze_news_sentiment(stock: str = Form(...)):
     try:
         logger.info(f"Stock symbol: {stock}")
-        sentiment_result = "Hello threre !!!"  
+        pipeline = SentimentPredictPipeline(stock)
+        pred = pipeline.predict() 
         return {
             "status": "success",
             "stock_symbol": stock,
-            "sentiment": sentiment_result
+            "sentiment": pred
         }
     except Exception as e:
         return {"status": "error", "message": str(e)}
