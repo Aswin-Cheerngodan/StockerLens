@@ -83,7 +83,7 @@ class SentimentAnalyzer:
                 probs = torch.softmax(logits, dim=1).cpu()
                 predicted_idx = torch.argmax(probs, dim=1).item()
                 sentiment = self.sentiment_map[predicted_idx]
-            logger.debug(f"inputs \n data {data} \n logits {logits}")
+            # logger.debug(f"inputs \n data {data} \n logits {logits}")
             logger.info(f"Predicted senitment of the news: {sentiment} with probability scores: {probs}")
             return sentiment
         except Exception as e:

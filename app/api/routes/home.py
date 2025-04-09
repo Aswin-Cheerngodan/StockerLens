@@ -25,12 +25,10 @@ async def predict_stock_price(stock_symbol: str = Form(...)):
         predictor = predictionPipeline(symbol=stock_symbol)
         price = predictor.predict()
         logger.debug(price)
-        margin_error = "0" 
         return {
             "status": "success",
             "stock_symbol": stock_symbol,
             "predicted_price": price,
-            "margin_error": margin_error
         }
     except Exception as e:
         return {"status": "error", "message": str(e)}

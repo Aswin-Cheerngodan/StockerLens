@@ -43,7 +43,7 @@
                 </div>
                 <div id="stockLoading" class="loader mt-4"></div>
                 <div id="stockResult" class="mt-4 bg-[#2C3347] p-4 rounded-lg text-center">
-                    <p class="text-xl">Predicted Price Today: <span class="text-yellow-500">$0</span> <span class="text-gray-400">(± $2.50)</span></p>
+                    <p class="text-xl">Predicted Price Today: <span class="text-yellow-500">$0</span></p>
                 </div>
             </div>
 
@@ -51,7 +51,7 @@
             <div class="bg-[#1E2333] rounded-xl p-6">
                 <label class="block text-sm text-gray-300 mb-2">News Sentiment</label>
                 <div class="flex space-x-4">
-                    <input id="sentimentInput" type="text" placeholder="Enter a stock name for sentiment analysis (e.g., Tesla)"
+                    <input id="sentimentInput" type="text" placeholder="Enter a stock ticker for sentiment analysis (e.g., tsla, amzn)"
                         class="flex-grow bg-[#2C3347] text-white p-3 rounded-lg">
                     <button onclick="analyzeSentiment()" class="bg-yellow-500 text-black px-6 py-3 rounded-lg hover:bg-yellow-600 transition">
                         Analyze
@@ -101,7 +101,7 @@
                 const data = await response.json();
                 if (data.status === 'success') {
                     result.innerHTML = 
-                        `<p class="text-xl">Predicted Price Today: <span class="text-yellow-500">$${data.predicted_price}</span> <span class="text-gray-400">(± $${data.margin_error})</span></p>`;
+                        `<p class="text-xl">Predicted Price Today: <span class="text-yellow-500">$${data.predicted_price}</span></span></p>`;
                 }
             } finally {
                 loading.style.display = 'none';

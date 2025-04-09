@@ -1,5 +1,6 @@
 from pathlib import Path
 from typing import Optional
+import os
 import numpy as np
 import cv2
 
@@ -35,6 +36,9 @@ class DataPreprocessor:
             img_normalized = resized_image / 255.0
             img_array = np.expand_dims(img_normalized, axis=0)
             logger.debug(f"Preprocessed image shape: {img_array.shape}")
+            if os.path.exists(self.file_path):
+                os.remove(self.file_path)
+                print(f"{self.file_path} deleted.")
             return img_array
         except Exception as e:
             logger.error(f"Image preprocessing failed: {str(e)}", exc_info=True)

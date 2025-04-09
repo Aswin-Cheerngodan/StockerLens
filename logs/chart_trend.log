@@ -75,3 +75,10 @@ ValueError: The truth value of an array with more than one element is ambiguous.
 2025-04-05 10:21:56 - src.chart_trend.pipeline.predict_pipeline - INFO - Image preprocessing completed (1, 224, 224, 3)
 2025-04-05 10:21:57 - src.chart_trend.components.chart_classifier - INFO - CNN model loaded from artifacts\models\chart_trend\chart_trend_model.keras
 2025-04-05 10:21:58 - src.chart_trend.pipeline.predict_pipeline - INFO - Image classification completed.
+2025-04-09 14:42:55 - src.chart_trend.components.data_ingestion - INFO - Intialized Data ingestion for chart trend classificatio with upload_dir: app\static\uploads
+2025-04-09 14:42:55 - src.chart_trend.components.data_ingestion - INFO - Image ingested successfully: app\static\uploads\3c5c33dcda0f4f6cb14a73e8c413b1c0_4.double-bottom-chart-pattern.jpg
+2025-04-09 14:42:55 - src.chart_trend.pipeline.predict_pipeline - INFO - File path saved and updated app\static\uploads\3c5c33dcda0f4f6cb14a73e8c413b1c0_4.double-bottom-chart-pattern.jpg
+2025-04-09 14:42:55 - src.chart_trend.components.data_preprocessing - DEBUG - Preprocessed image shape: (1, 224, 224, 3)
+2025-04-09 14:42:55 - src.chart_trend.pipeline.predict_pipeline - INFO - Image preprocessing completed (1, 224, 224, 3)
+2025-04-09 14:42:58 - src.chart_trend.components.chart_classifier - INFO - CNN model loaded from artifacts\models\chart_trend\chart_trend_model.keras
+2025-04-09 14:42:59 - src.chart_trend.pipeline.predict_pipeline - INFO - Image classification completed.

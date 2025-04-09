@@ -73,3 +73,8 @@
 2025-04-08 17:46:41 - app.api.routes.home - INFO - Stock symbol: dltr
 2025-04-08 17:47:22 - app.api.routes.home - INFO - Stock symbol: mazdock
 2025-04-08 17:47:54 - app.api.routes.home - INFO - Stock symbol: smci
+2025-04-09 14:50:45 - app.api.routes.home - INFO - Stock symbol: AAPL
+2025-04-09 14:51:14 - app.api.routes.home - DEBUG - None
+2025-04-09 14:51:44 - app.api.routes.home - INFO - Stock symbol: MSFT
+2025-04-09 14:51:52 - app.api.routes.home - DEBUG - 362.14
+2025-04-09 14:51:59 - app.api.routes.home - INFO - Stock symbol: aapl

@@ -810,3 +810,70 @@ Date
 2025-04-05 10:23:25 - src.stock_price.components.price_predict - DEBUG - Normalized prediction: [1.1667953]
 2025-04-05 10:23:25 - src.stock_price.components.price_predict - INFO - Scaler path updated: artifacts\preprocessors\stock_price\microsoft_scaler.pkl
 2025-04-05 10:23:25 - src.stock_price.components.price_predict - DEBUG - Predicted price: [366.48947299]
+2025-04-09 14:50:49 - src.stock_price.components.price_predict - INFO - Loaded LSTM model from artifacts\models\stock_price\apple_model.keras
+2025-04-09 14:50:49 - src.stock_price.components.price_predict - INFO - Starting Price prediction for AAPL
+2025-04-09 14:50:49 - src.stock_price.components.data_ingestion - INFO - Initialized ingestion for AAPL from 2025-03-10 to 2025-04-09
+2025-04-09 14:50:49 - src.stock_price.components.data_ingestion - INFO - Starting full data ingestion and merging
+2025-04-09 14:50:49 - src.stock_price.components.data_ingestion - INFO - Fetching stock prices for AAPL from 2025-03-10 to 2025-04-09
+2025-04-09 14:51:12 - src.stock_price.components.data_ingestion - WARNING - No stock data for AAPL
+2025-04-09 14:51:12 - src.stock_price.components.data_ingestion - INFO - Fetching sentiment scores for AAPL
+2025-04-09 14:51:14 - src.stock_price.components.data_ingestion - ERROR - Cannot merge data: Stock or sentiment data is missing.
+2025-04-09 14:51:14 - src.stock_price.components.price_predict - ERROR - Failed to fetch or merge data.
+2025-04-09 14:51:47 - src.stock_price.components.price_predict - INFO - Loaded LSTM model from artifacts\models\stock_price\microsoft_model.keras
+2025-04-09 14:51:47 - src.stock_price.components.price_predict - INFO - Starting Price prediction for MSFT
+2025-04-09 14:51:47 - src.stock_price.components.data_ingestion - INFO - Initialized ingestion for MSFT from 2025-03-10 to 2025-04-09
+2025-04-09 14:51:47 - src.stock_price.components.data_ingestion - INFO - Starting full data ingestion and merging
+2025-04-09 14:51:47 - src.stock_price.components.data_ingestion - INFO - Fetching stock prices for MSFT from 2025-03-10 to 2025-04-09
+2025-04-09 14:51:49 - src.stock_price.components.data_ingestion - DEBUG - Stock data sample:
+Price            Close        High         Low        Open    Volume
+Date                                                                
+2025-04-02  382.140015  385.079987  376.619995  377.970001  16092600
+2025-04-03  373.109985  377.480011  369.350006  374.790009  30198000
+2025-04-04  359.839996  374.589996  359.480011  364.130005  49209900
+2025-04-07  357.859985  371.000000  344.790009  350.880005  50425000
+2025-04-08  354.559998  373.649994  350.250000  368.260010  35808800
+2025-04-09 14:51:49 - src.stock_price.components.data_ingestion - INFO - Fetching sentiment scores for MSFT
+2025-04-09 14:51:51 - src.stock_price.components.data_ingestion - INFO - Merged data shape (22, 7)
+2025-04-09 14:51:51 - src.stock_price.components.data_ingestion - DEBUG - Merged data head
+         Date       Close        High         Low        Open    Volume  normalized
+0  2025-03-10  380.160004  386.399994  377.220001  385.839996  32840100      0.6160
+1  2025-03-11  380.450012  386.000000  376.910004  379.000000  30380200      0.7168
+2  2025-03-12  383.269989  385.220001  378.950012  382.950012  24253600      0.6547
+3  2025-03-13  378.769989  385.320007  377.450012  383.160004  20473000      0.8078
+4  2025-03-14  388.559998  390.230011  379.510010  379.779999  19952800      0.7339
+2025-04-09 14:51:51 - src.stock_price.components.data_preprocessing - INFO - Initialized DataPreprocessor with scaler path: artifacts\preprocessors\stock_price
+2025-04-09 14:51:51 - src.stock_price.components.data_preprocessing - INFO - Starting data preprocessing
+2025-04-09 14:51:51 - src.stock_price.components.data_preprocessing - INFO - Scaler path updated: artifacts\preprocessors\stock_price\microsoft_scaler.pkl
+2025-04-09 14:51:51 - src.stock_price.components.data_preprocessing - INFO - Loaded scaler from artifacts\preprocessors\stock_price\microsoft_scaler.pkl
+2025-04-09 14:51:51 - src.stock_price.components.data_preprocessing - INFO - Preprocessed data shape: (22, 6)
+2025-04-09 14:51:51 - src.stock_price.components.data_preprocessing - DEBUG - Preprocessed data sample:
+         Open       Close        High         Low    Volume  normalized
+0  385.839996  380.160004  386.399994  377.220001  32840100      0.6160
+1  379.000000  380.450012  386.000000  376.910004  30380200      0.7168
+2  382.950012  383.269989  385.220001  378.950012  24253600      0.6547
+3  383.160004  378.769989  385.320007  377.450012  20473000      0.8078
+4  379.779999  388.559998  390.230011  379.510010  19952800      0.7339
+2025-04-09 14:51:51 - src.stock_price.components.price_predict - DEBUG - Prepared input data:
+[[[ 1.46927782  1.4167926   1.43765451  1.44082428 -0.98809369
+    1.22620638]
+  [ 1.41760959  1.42327036  1.40527818  1.42830718 -1.18052367
+   -0.10778789]
+  [ 1.39585991  1.29817227  1.37248025  1.31629644 -0.53417062
+   -0.21326142]
+  [ 1.23098844  1.26195994  1.24529542  1.21263034  0.5795746
+    0.51357692]
+  [ 1.25337434  1.33417264  1.30625133  1.2767131  -0.69380303
+    0.32831511]
+  [ 1.28859797  1.33364179  1.32976873  1.31298001 -0.98939212
+    0.36110481]
+  [ 1.25485982  1.23774709  1.24961932  1.23520382  0.16977336
+   -2.39705539]
+  [ 1.14176247  1.096826    1.2191412   1.12961211  1.73214934
+    0.29224645]
+  [ 1.00118653  1.07579921  1.18128107  0.97245473  1.83200485
+   -0.26681793]
+  [ 1.18557977  1.04075488  1.20922793  1.0308671   0.63086242
+    0.90923929]]]
+2025-04-09 14:51:52 - src.stock_price.components.price_predict - DEBUG - Normalized prediction: [1.1206924]
+2025-04-09 14:51:52 - src.stock_price.components.price_predict - INFO - Scaler path updated: artifacts\preprocessors\stock_price\microsoft_scaler.pkl
+2025-04-09 14:51:52 - src.stock_price.components.price_predict - DEBUG - Predicted price: [362.14404094]
