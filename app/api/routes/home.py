@@ -15,7 +15,7 @@ templates = Jinja2Templates(directory="app/templates")
 @home_router.get("/", response_class=HTMLResponse)
 async def stock_price_page(request: Request):
     """Render stock price prediction page"""
-    return templates.TemplateResponse("sample.html", {"request": request})
+    return templates.TemplateResponse("index.html", {"request": request})
 
 # stock price prediction endpoint
 @home_router.post("/price")

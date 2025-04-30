@@ -38,7 +38,7 @@ class WebSearchandScraper:
             )
             
             response = web_search_agent.run(query)
-            return response
+            return response.content
         except Exception as e:
             logger.error(f"Error while web searching using agno : {str(e)}")
             return None

@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.templating import Jinja2Templates
 import uvicorn
 from app.api.routes.home import home_router
+from app.api.routes.stockgpt import stockgpt_router
 
 app = FastAPI(title="StockerLens API")
 
@@ -16,7 +17,8 @@ app.add_middleware(
 )
 
 # Include routers
-app.include_router(home_router,)
+app.include_router(home_router)
+app.include_router(stockgpt_router)
 
 # Health check endpoint
 @app.get("/api/health")

@@ -3,84 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StockGPT</title>
+    <title>StockGPT Document Chat</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/phosphor-icons/dist/phosphor-icons.min.js"></script>
+    <style>
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #eab308;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: none;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
-<body class="bg-[#0E1320] text-white min-h-screen flex flex-col">
-    <!-- Header -->
-    <header class="bg-[#1E2333] p-4 flex justify-between items-center">
-        <div class="flex items-center space-x-3">
-            <img src="/api/placeholder/40/40" alt="StockGPT Logo" class="rounded-full">
-            <h1 class="text-2xl font-bold text-yellow-500">StockGPT</h1>
-        </div>
-        <div class="flex items-center space-x-4">
-            <button class="text-gray-300 hover:text-white">
-                <i class="ph-bold ph-gear"></i>
-            </button>
-            <button class="text-gray-300 hover:text-white">
-                <i class="ph-bold ph-sign-out"></i>
-            </button>
-        </div>
-    </header>
+<body class="bg-[#0E1320] text-white min-h-screen p-8">
+    <h1 class="text-3xl font-bold text-yellow-500 mb-6">Chat with StockGPT</h1>
 
-    <!-- Main Chat Container -->
-    <div class="flex flex-1 overflow-hidden">
-        <!-- Sidebar -->
-        <div class="w-64 bg-[#1E2333] p-4 border-r border-gray-700">
-            <button class="w-full bg-yellow-500 text-black p-3 rounded-lg mb-4 hover:bg-yellow-600">
-                + New Chat
-            </button>
-            <div class="space-y-2">
-                <div class="bg-[#2C3347] p-3 rounded-lg flex justify-between items-center">
-                    <span>Stock Analysis Chat</span>
-                    <i class="ph-bold ph-chat-text text-gray-400"></i>
-                </div>
-                <div class="bg-[#2C3347] p-3 rounded-lg flex justify-between items-center">
-                    <span>Investment Strategies</span>
-                    <i class="ph-bold ph-chat-text text-gray-400"></i>
-                </div>
-            </div>
+    <div class="max-w-3xl mx-auto space-y-6">
+
+        <!-- Upload Section -->
+        <div class="bg-[#1E2333] p-6 rounded-xl space-y-4">
+            <label class="block text-sm text-gray-300 mb-2">Upload Document (.pdf or .txt)</label>
+            <input type="file" id="docFile" accept=".pdf,.txt"
+                class="w-full file:mr-4 file:rounded-lg file:border-0 file:bg-yellow-500 file:text-black file:px-4 file:py-2 hover:file:bg-yellow-600">
+            <div id="uploadLoading" class="loader mt-2"></div>
+            <div id="uploadStatus" class="mt-2 text-green-400 hidden">Vector database created. Ready to ask questions!</div>
         </div>
 
-        <!-- Chat Window -->
-        <div class="flex-1 flex flex-col">
-            <!-- Chat Messages -->
-            <div class="flex-1 overflow-y-auto p-6 space-y-4">
-                <div class="flex">
-                    <img src="/api/placeholder/40/40" alt="StockGPT" class="w-10 h-10 rounded-full mr-3">
-                    <div class="bg-[#1E2333] p-4 rounded-lg max-w-xl">
-                        <p>Hello! I'm StockGPT, your AI assistant for stock market analysis and investment insights. How can I help you today?</p>
-                    </div>
-                </div>
-                <div class="flex justify-end">
-                    <div class="bg-yellow-500 text-black p-4 rounded-lg max-w-xl">
-                        <p>Can you help me analyze Apple's stock performance?</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- File Upload and Input Area -->
-            <div class="bg-[#1E2333] p-4 border-t border-gray-700">
-                <div class="flex items-center space-x-4">
-                    <label class="cursor-pointer">
-                        <input type="file" class="hidden" multiple />
-                        <i class="ph-bold ph-paperclip-simple text-2xl text-gray-400 hover:text-white"></i>
-                    </label>
-                    <input 
-                        type="text" 
-                        placeholder="Ask StockGPT anything about stocks..." 
-                        class="flex-1 bg-[#2C3347] text-white p-3 rounded-lg"
-                    >
-                    <button class="bg-yellow-500 text-black px-6 py-3 rounded-lg hover:bg-yellow-600">
-                        <i class="ph-bold ph-paper-plane-right"></i>
-                    </button>
-                </div>
-                <div id="file-preview" class="mt-4 flex space-x-2">
-                    <!-- Dynamically added file previews would go here -->
-                </div>
+        <!-- Chat Section -->
+        <div class="bg-[#1E2333] p-6 rounded-xl space-y-4">
+            <label for="queryInput" class="block text-sm text-gray-300 mb-2">Ask about the document</label>
+            <textarea id="queryInput" rows="4" placeholder="Type your question..."
+                class="w-full p-4 rounded-lg bg-[#2C3347] text-white"></textarea>
+            <button onclick="askQuestion()" class="bg-yellow-500 text-black px-6 py-3 rounded-lg hover:bg-yellow-600 transition">
+                Ask StockGPT
+            </button>
+            <div id="queryLoading" class="loader mt-2"></div>
+            <div id="chatResult" class="bg-[#2C3347] p-4 rounded-lg mt-2">
+                <h2 class="text-lg font-semibold mb-2 text-yellow-500">Response:</h2>
+                <p id="chatResponse">Awaiting query...</p>
             </div>
         </div>
     </div>
+
+    <a href="http://localhost:8000/"
+        class="fixed bottom-6 right-6 bg-yellow-500 text-black px-6 py-3 rounded-lg hover:bg-yellow-600 transition shadow-lg">
+        ← Go Back
+    </a>
+
+    <script>
+        const fileInput = document.getElementById('docFile');
+        const uploadStatus = document.getElementById('uploadStatus');
+        const uploadLoading = document.getElementById('uploadLoading');
+        const queryLoading = document.getElementById('queryLoading');
+        const chatResponse = document.getElementById('chatResponse');
+
+        fileInput.addEventListener('change', async () => {
+            const file = fileInput.files[0];
+            if (!file) return;
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            uploadStatus.classList.add('hidden');
+            uploadLoading.style.display = 'block';
+
+            try {
+                const res = await fetch('http://localhost:8000/chat/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await res.json();
+                console.log(data)
+                if (data.status === 'success') {
+                    uploadStatus.classList.remove('hidden');
+                } else {
+                    alert("Upload failed: " + data.message);
+                }
+            } catch {
+                alert("Upload error. Please try again.");
+            } finally {
+                uploadLoading.style.display = 'none';
+            }
+        });
+
+        async function askQuestion() {
+            const query = document.getElementById('queryInput').value;
+            if (!query.trim()) return;
+
+            chatResponse.innerText = "Processing...";
+            queryLoading.style.display = 'block';
+
+            const formData = new FormData();
+            formData.append('query', query);
+
+            try {
+                const res = await fetch('http://localhost:8000/chat/query', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await res.json();
+                chatResponse.innerText = data.status === 'success'
+                    ? data.response
+                    : `Error: ${data.message}`;
+            } catch {
+                chatResponse.innerText = 'Something went wrong.';
+            } finally {
+                queryLoading.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
