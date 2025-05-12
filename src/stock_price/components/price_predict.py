@@ -20,8 +20,8 @@ class PricePredictor:
     def __init__(
             self,
             ticker: str = "MSFT",
-            model_path: str = "artifacts\models\stock_price",
-            scaler_path: str = "artifacts\preprocessors\stock_price",
+            model_path: str = r"artifacts/models/stock_price",
+            scaler_path: str = r"artifacts/preprocessors/stock_price",
             timesteps: int = 10,
     ) -> None:
         """

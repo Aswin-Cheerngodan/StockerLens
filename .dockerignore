@@ -1,0 +1,20 @@
+# Ignore Python cache and virtual environments
+__pycache__/
+*.pyo
+*.pyd
+venv/
+.env
+__pycache__/
+*.pyc
+.env
+*.tar.gz
+*.zip
+*.pt
+*.ipynb
+.git
+.idea
+.vscode
+notebooks/
+logs/
+data/
+venv/

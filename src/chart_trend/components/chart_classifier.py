@@ -12,7 +12,7 @@ logger = setup_logger(__name__, "logs/chart_trend.log")
 
 class ChartClassifier:
     """Class handles chart classification."""
-    def __init__(self, model_path: Path = Path(r"artifacts\models\chart_trend\chart_trend_model.keras")):
+    def __init__(self, model_path: Path = Path(r"artifacts/models/chart_trend/chart_trend_model.keras")):
         """Intialize with path of the model.
         
         Args:

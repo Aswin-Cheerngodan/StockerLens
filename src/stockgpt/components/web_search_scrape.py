@@ -27,6 +27,7 @@ class WebSearchandScraper:
             Optional[str]: Web search results if completed. None if websearch fails.
         """
         try:
+            # Creating web search agent with agno library
             web_search_agent = Agent(
                 name="Web Search Agent",
                 role="Search the web for relevant information based on user queries",
@@ -36,20 +37,14 @@ class WebSearchandScraper:
                 show_tool_calls=True,
                 markdown=True,
             )
-            
+            logger.info(f"Web search agent started")
             response = web_search_agent.run(query)
+            logger.info(f"Web search completed successfully results: {response.content}")
             return response.content
         except Exception as e:
             logger.error(f"Error while web searching using agno : {str(e)}")
             return None
         
-    
 
-
-if __name__=="__main__":
-    websearchscrape = WebSearchandScraper()
-    response = websearchscrape.web_searcher_agent("Today ipl match details")
-    logger.info(response.content)
-    # print(response)
 
         

@@ -3,6 +3,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse,JSONResponse
 from src.stockgpt.pipeline.rag_pipeline import RAGHandler
 from src.stockgpt.components.web_search_scrape import WebSearchandScraper
+from src.stockgpt.components.data_ingestion import DataIngestion
 from src.utils.logger import setup_logger
 
 
@@ -21,14 +22,14 @@ async def chat_page(request: Request):
 async def create_vector_db(request: Request, file: UploadFile = File(...)):
     try:
         logger.info(f"Processing started for stockgpt.")
-        rag_handler = RAGHandler(file=file)
-        vector_db = rag_handler.document_loader()
+        data_ingestor = DataIngestion()
+        data_ingestor.ingest_image(file=file)
+        vector_db = data_ingestor.document_loader()
         request.app.state.vector_db = vector_db
-        # Placeholder logic: Replace this with actual LLM-based pipeline
+        
         contents = await file.read()
         response = f"Received document with {len(contents)} bytes "
         
-        # Ideally, pass `contents` and `query` to a DocumentQA pipeline
         return {"status": "success", "response": response}
     except Exception as e:
         logger.error(f"Error while creating vector database: {str(e)}")
@@ -37,7 +38,6 @@ async def create_vector_db(request: Request, file: UploadFile = File(...)):
 @stockgpt_router.post("/chat/query")
 async def query_stockgpt(request: Request, query: str = Form(...)):
     try:
-        # Placeholder logic: Replace this with actual LLM-based pipeline
         vector_db = request.app.state.vector_db
         web_searcher = WebSearchandScraper()
         web_res = web_searcher.web_searcher_agent(query)
@@ -46,5 +46,5 @@ async def query_stockgpt(request: Request, query: str = Form(...)):
         logger.info(f"response got \n{response}")
         return {"status": "success", "response": response}
     except Exception as e:
-        return JSONResponse(status_code=500, content={"status": "error", "message": str(e)})
+        return JSONResponse(status_code=500, content={"status": "error", "message": "Failed to generate response"})
     

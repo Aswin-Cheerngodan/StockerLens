@@ -6,7 +6,7 @@ import time
 from src.utils.logger import setup_logger
 
 
-logger = setup_logger(__name__, r"logs\sentiment_analysis.log")
+logger = setup_logger(__name__, r"logs/sentiment_analysis.log")
 
 
 class WebScraper:

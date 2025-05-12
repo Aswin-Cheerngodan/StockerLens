@@ -15,16 +15,17 @@ templates = Jinja2Templates(directory="app/templates")
 @home_router.get("/", response_class=HTMLResponse)
 async def stock_price_page(request: Request):
     """Render stock price prediction page"""
+    logger.info("page loaded for Stock price.")
     return templates.TemplateResponse("index.html", {"request": request})
 
 # stock price prediction endpoint
 @home_router.post("/price")
 async def predict_stock_price(stock_symbol: str = Form(...)):
     try:
-        logger.info(f"Stock symbol: {stock_symbol}")
+        logger.info(f"Stock symbol for stock price predicton: {stock_symbol}")
         predictor = predictionPipeline(symbol=stock_symbol)
         price = predictor.predict()
-        logger.debug(price)
+        logger.info(f"Price prediction completed for {stock_symbol} with price {price}")
         return {
             "status": "success",
             "stock_symbol": stock_symbol,
@@ -37,9 +38,10 @@ async def predict_stock_price(stock_symbol: str = Form(...)):
 @home_router.post("/sentiment")
 async def analyze_news_sentiment(stock: str = Form(...)):
     try:
-        logger.info(f"Stock symbol: {stock}")
+        logger.info(f"Stock symbol for sentiment analysis: {stock}")
         pipeline = SentimentPredictPipeline(stock)
         pred = pipeline.predict() 
+        logger.info(f"Sentiment analysis completed for stock '{stock}' with sentiment: {pred}")
         return {
             "status": "success",
             "stock_symbol": stock,
@@ -52,12 +54,16 @@ async def analyze_news_sentiment(stock: str = Form(...)):
 @home_router.post("/chart")
 async def analyze_chart_trend(file: UploadFile = File(...)):
     """Handle chart image upload and predict the trend."""
-    # Ingest the image
-    classifier = TrendClassifier(file)
-    trend = classifier.classify()
-    trend = str(trend)
-    return {
-            "status": "success",
-            "filename": file.filename,
-            "trend": trend
-        }
+    try:
+        logger.info(f"Chart trend classification started.")
+        classifier = TrendClassifier(file)
+        trend = classifier.classify()
+        trend = str(trend)
+        logger.info(f"Chart trend classification completed for chart with trend: {trend}")
+        return {
+                "status": "success",
+                "filename": file.filename,
+                "trend": trend
+            }
+    except Exception as e:
+        return {"status": "error", "message": str(e)}

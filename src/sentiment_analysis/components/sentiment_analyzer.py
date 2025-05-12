@@ -6,12 +6,12 @@ from pathlib import Path
 
 from src.utils.logger import setup_logger
 
-logger = setup_logger(__name__,r"logs\sentiment_analysis.log" )
+logger = setup_logger(__name__,r"logs/sentiment_analysis.log" )
 
 
 class SentimentAnalyzer:
     """Class handles the data preprocessing and sentiment analysis."""
-    def __init__(self, model_path: Path =Path(r"artifacts\models\sentiment_analysis\sentiment_model")):
+    def __init__(self, model_path: Path =Path(r"artifacts/models/sentiment_analysis/sentiment_model")):
         """Intializing the class for sentiment analysis.
         
         Args:

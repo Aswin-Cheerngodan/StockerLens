@@ -38,7 +38,7 @@ class DataPreprocessor:
             logger.debug(f"Preprocessed image shape: {img_array.shape}")
             if os.path.exists(self.file_path):
                 os.remove(self.file_path)
-                print(f"{self.file_path} deleted.")
+                logger.info(f"{self.file_path} deleted.")
             return img_array
         except Exception as e:
             logger.error(f"Image preprocessing failed: {str(e)}", exc_info=True)

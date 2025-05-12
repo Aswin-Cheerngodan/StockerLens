@@ -13,7 +13,7 @@ logger = setup_logger(__name__, r"logs/chart_trend.log")
 
 class DataIngestion:
     """Class to handle data ingestion for chart trend classification."""
-    def __init__(self, upload_dir: Path = Path(r"app\static\uploads")):
+    def __init__(self, upload_dir: Path = Path(r"app/static/uploads")):
         """ Initialize with image directory.
         
         Args:

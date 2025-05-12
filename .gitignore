@@ -1,5 +1,8 @@
 __pycache__/
 *.pyc
+*.py[cod]
+*$py.class
+
 /venv
 .env
 /artifacts/models/
