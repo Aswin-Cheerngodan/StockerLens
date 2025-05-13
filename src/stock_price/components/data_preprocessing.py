@@ -16,7 +16,7 @@ logger = setup_logger(__name__, "logs/stock_price.log")
 class DataPreprocessor:
     """Class to preprocess the data for the model input"""
 
-    def __init__(self, scaler_path: str = r"artifacts\preprocessors\stock_price") -> None:
+    def __init__(self, scaler_path: str = r"artifacts/preprocessors/stock_price") -> None:
         """Initialize the preprocessor with saved path of scaler.
 
         Args:

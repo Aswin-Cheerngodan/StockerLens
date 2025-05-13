@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Request, Form, Depends, UploadFile, File
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse,JSONResponse
+import markdown
 from src.stockgpt.pipeline.rag_pipeline import RAGHandler
 from src.stockgpt.components.web_search_scrape import WebSearchandScraper
 from src.stockgpt.components.data_ingestion import DataIngestion
@@ -44,6 +45,7 @@ async def query_stockgpt(request: Request, query: str = Form(...)):
         rag = RAGHandler()
         response = rag.rag_generator(query, vector_db, web_res)
         logger.info(f"response got \n{response}")
+        response = markdown.markdown(response)
         return {"status": "success", "response": response}
     except Exception as e:
         return JSONResponse(status_code=500, content={"status": "error", "message": "Failed to generate response"})

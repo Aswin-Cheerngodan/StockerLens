@@ -112,7 +112,7 @@
                 });
 
                 const data = await res.json();
-                chatResponse.innerText = data.status === 'success'
+                chatResponse.innerHTML = data.status === 'success'
                     ? data.response
                     : `Error: ${data.message}`;
             } catch {

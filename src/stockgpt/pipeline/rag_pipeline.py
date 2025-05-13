@@ -40,7 +40,8 @@ class RAGHandler:
                          model_name="mistral-saba-24b")
             messages = [
                 SystemMessagePromptTemplate.from_template(
-                    "You are a helpful assistant that only answers based on the given context only."
+                    "You are a helpful assistant that only answers based on the given context and web search results if that" \
+                    "is relevant to the query."
                 ),
                 HumanMessagePromptTemplate.from_template(
                     "<context>\n{context}\n</context>\nQuestion: {input}"
@@ -48,9 +49,7 @@ class RAGHandler:
                 SystemMessagePromptTemplate.from_template(
                     f"This is the result from web search of this query {{web_result}}"
                 ),
-                SystemMessagePromptTemplate.from_template(
-                    "Provide raw text only. Avoid using **bold**, *, or any markdown formatting in the response."
-                )
+                
             ]
             # Creating Prompt template
             prompt = ChatPromptTemplate.from_messages(messages)

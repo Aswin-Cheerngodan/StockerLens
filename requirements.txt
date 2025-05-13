@@ -1,8 +1,13 @@
+# Data and ML core
 pandas==2.2.3
 numpy==2.1.3
 scikit-learn==1.6.1
+
+# Data fetching and Environment config
 yfinance==0.2.54
 python-dotenv==1.0.1
+
+# Deep learning libraries
 tensorflow===2.19.0
 uvicorn==0.34.0
 fastapi==0.115.12
@@ -13,10 +18,15 @@ beautifulsoup4==4.13.3
 transformers==4.51.0
 accelerate==1.6.0
 torch==2.6.0
-pypdf==5.4.0
+opencv-python-headless==4.11.0.86
+
+# RAG essentials
 faiss-cpu==1.11.0
+pypdf==5.4.0
 agno==1.4.2
 groq==0.23.1
+
+# Langchain ecosystem
 langchain==0.3.24
 langchain-community==0.3.23
 langchain-core==0.3.56
@@ -24,5 +34,4 @@ langchain-groq==0.3.2
 langchain-mistralai==0.2.10
 langchain-text-splitters==0.3.8
 langsmith==0.3.38
-opencv-python-headless==4.11.0.86
 duckduckgo-search==8.0.1

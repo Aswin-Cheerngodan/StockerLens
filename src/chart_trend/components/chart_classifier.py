@@ -16,7 +16,7 @@ class ChartClassifier:
         """Intialize with path of the model.
         
         Args:
-            model_path (Path): Path to the chart trend classifier model. Defaults to "artifacts\models\chart_trend\chart_trend_model.keras"
+            model_path (Path): Path to the chart trend classifier model. Defaults to "artifacts/models/chart_trend/chart_trend_model.keras"
         """
         self.model_path = model_path
         self.classes = ["Downtrend", "Uptrend"]

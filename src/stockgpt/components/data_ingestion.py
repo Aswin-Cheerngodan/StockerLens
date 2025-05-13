@@ -21,7 +21,7 @@ class DataIngestion:
         """ Initialize with image directory.
         
         Args:
-            upload_dir (Path): Directory to store uploaded files. Defaults to r"app\static\ploads"
+            upload_dir (Path): Directory to store uploaded files. Defaults to r"app/static/uploads"
         """
         self.upload_dir = upload_dir
         self.upload_dir.mkdir(parents=True, exist_ok=True)
