@@ -48,5 +48,6 @@ async def query_stockgpt(request: Request, query: str = Form(...)):
         response = markdown.markdown(response)
         return {"status": "success", "response": response}
     except Exception as e:
+        logger.error(f"Generating response for stockgpt failed : {str(e)}")
         return JSONResponse(status_code=500, content={"status": "error", "message": "Failed to generate response"})
     

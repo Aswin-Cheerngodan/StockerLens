@@ -41,8 +41,8 @@ class DataPreprocessor:
         """
         # Updating scaler path based on the stock name
         stock_name_map = {
-            "AAPL": "apple",
-            "MSFT": "microsoft",
+            "aapl": "apple",
+            "msft": "microsoft",
         }
         stock_name = stock_name_map.get(symbol)
         self.scaler_path = os.path.join(self.scaler_path, f"{stock_name}_scaler.pkl")
@@ -68,7 +68,7 @@ class DataPreprocessor:
         """Preprocess merged stock price and sentiment data for model input.
 
         Args:
-            symbol (str): stock symbol (eg: AAPL)
+            symbol (str): stock symbol (eg: aapl)
             merged_data (pd.DataFrame): DataFrame from DataIngestion.merge_all_data with columns:
                 'Date', 'Open', 'High', 'Low', 'Close', 'Volume', 'count', 'normalized'.
 
@@ -101,11 +101,3 @@ class DataPreprocessor:
             return None
 
 
-
-
-# if __name__=="__main__":
-#     dataingestor = DataIngestion("AAPL")
-#     merged_data = dataingestor.merge_all_data()
-
-#     preprocessor = DataPreprocessor()
-#     logger.debug(preprocessor.preprocess("AAPL", merged_data))

@@ -18,7 +18,7 @@ class SentimentAnalyzer:
             model_path (Path): Path of the sentiment analysis model
         """
         self.model_path = model_path
-        self.sentiment_map = {0:"very negative", 1:"negative", 2:"Neutral", 3:"positive", 4:"very positive"}
+        self.sentiment_map = {0:"Very Negative", 1:"Negative", 2:"Neutral", 3:"Positive", 4:"Very Positive"}
 
 
     def _data_preprocessing(self, data: List[str]) -> Optional[str]:
@@ -92,10 +92,6 @@ class SentimentAnalyzer:
         
 
 
-# if __name__=="__main__":
-#     sentient = SentimentAnalyzer()
-#     senitment = sentient.predict_sentiment("hi there something else")
-#     logger.info(f"Sentiment {senitment}")
     
 
 

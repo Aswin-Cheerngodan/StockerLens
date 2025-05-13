@@ -39,8 +39,8 @@ class PricePredictor:
         self.timesteps = timesteps
         self.ticker = ticker
         self.stock_name_map = {
-            "MSFT":"microsoft",
-            "AAPL":"apple"
+            "msft":"microsoft",
+            "aapl":"apple"
         }
         self.model = self._load_model()
 
@@ -136,20 +136,5 @@ class PricePredictor:
             return None
         
 
-
-
-# if __name__=="__main__":
-#     symbol = "MSFT"
-
-#     predictor = PricePredictor(ticker=symbol)
-#     predicted_price = predictor.predict_price()
-
-#     if predicted_price is not None:
-#         print(f"Predicted Today's closing price for {symbol}: ${predicted_price}")
-#     else:
-#         print("Prediction failed. Check logs for details.")
-
-
-    
 
 

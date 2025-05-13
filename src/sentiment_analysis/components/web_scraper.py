@@ -91,11 +91,6 @@ class WebScraper:
             return None
 
 
-# if __name__=="__main__":
-#     scraper = WebScraper("AAPL")
-#     news_data = scraper.scrape_all()
-#     print(len(news_data))
-#     logger.debug(f"first 5 headlines of the news {news_data[:5]}")
 
 
         

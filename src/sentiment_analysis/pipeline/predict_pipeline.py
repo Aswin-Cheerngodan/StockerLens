@@ -16,7 +16,7 @@ class SentimentPredictPipeline:
         Args
             symbol (str): Stock symbol for sentiment analysis.
         """
-        self.symbol = symbol
+        self.symbol = symbol.lower()
         
     def predict(self):
         """Predict the sentiment of the stock."""
@@ -30,8 +30,3 @@ class SentimentPredictPipeline:
         return pred 
     
 
-
-# if __name__=="__main__":
-#     pipeline = SentimentPredictPipeline("tsla")
-#     pred = pipeline.predict()
-#     print(pred)

@@ -150,19 +150,3 @@ class DataIngestion:
 
         
 
-
-
-# def main():
-#     """Main function to demonstrate data ingestion and merging."""
-#     symbol = input("Enter stock symbol (e.g., AMZN): ").strip().upper()
-
-#     ingestor = DataIngestion(symbol)
-#     merged_data = ingestor.merge_all_data()
-
-#     if merged_data is not None:
-#         print("Merged Data Sample (Last 30 Days):")
-#         print(merged_data.head())
-
-# if __name__ == "__main__":
-#     main()
-    

@@ -32,6 +32,7 @@ async def predict_stock_price(stock_symbol: str = Form(...)):
             "predicted_price": price,
         }
     except Exception as e:
+        logger.error(f"Failed to predict stock prices: {str(e)}")
         return {"status": "error", "message": str(e)}
     
 # sentiment analysis endpoint
@@ -48,6 +49,7 @@ async def analyze_news_sentiment(stock: str = Form(...)):
             "sentiment": pred
         }
     except Exception as e:
+        logger.error(f"sentiment analysis failed : {str(e)}")
         return {"status": "error", "message": str(e)}
     
 # chart trend analyzer endpoint
@@ -66,4 +68,5 @@ async def analyze_chart_trend(file: UploadFile = File(...)):
                 "trend": trend
             }
     except Exception as e:
+        logger.error(f"Chart trend analysis failed : {str(e)}")
         return {"status": "error", "message": str(e)}

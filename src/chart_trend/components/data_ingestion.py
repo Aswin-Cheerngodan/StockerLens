@@ -52,8 +52,3 @@ class DataIngestion:
         
         
         
-
-
-# if __name__=="__main__":
-#     data_ingestor = DataIngestion()
-#     data_ingestor.ingest_image("NO")
