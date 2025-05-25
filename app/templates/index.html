@@ -97,7 +97,7 @@
             result.style.display = 'none';
 
             try {
-                const response = await fetch('http://localhost:8000/price', {
+                const response = await fetch('/price', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: `stock_symbol=${stock}`
@@ -122,7 +122,7 @@
             result.style.display = 'none';
 
             try {
-                const response = await fetch('http://localhost:8000/sentiment', {
+                const response = await fetch('/sentiment', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: `stock=${stock}`
@@ -148,7 +148,7 @@
             result.style.display = 'none';
 
             try {
-                const response = await fetch('http://localhost:8000/chart', {
+                const response = await fetch('/chart', {
                     method: 'POST',
                     body: formData
                 });

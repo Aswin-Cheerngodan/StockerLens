@@ -5,8 +5,6 @@ __pycache__/
 
 /venv
 .env
-/artifacts/models/
-*.keras
 logs/
 static/
 *.log

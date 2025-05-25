@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    <a href="http://localhost:8000"
+    <a href="/"
         class="fixed bottom-6 right-6 bg-yellow-500 text-black px-6 py-3 rounded-lg hover:bg-yellow-600 transition shadow-lg">
         ← Go Back
     </a>
@@ -76,7 +76,7 @@
             uploadLoading.style.display = 'block';
 
             try {
-                const res = await fetch('http://localhost:8000/chat/upload', {
+                const res = await fetch('/chat/upload', {
                     method: 'POST',
                     body: formData
                 });
@@ -106,7 +106,7 @@
             formData.append('query', query);
 
             try {
-                const res = await fetch('http://localhost:8000/chat/query', {
+                const res = await fetch('/chat/query', {
                     method: 'POST',
                     body: formData
                 });
