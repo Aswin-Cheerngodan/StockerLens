@@ -37,7 +37,7 @@ class WebScraper:
             response = requests.get(url, headers=headers)
             if response.status_code != 200:
                 logger.error(f"failed to fetch {url} with status code {response.status_code}")
-                return None
+                return []
             
             soup = BeautifulSoup(response.text, "html.parser")
             headlines = soup.find_all(tag, class_=class_name)
