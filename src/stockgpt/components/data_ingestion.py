@@ -18,17 +18,17 @@ logger = setup_logger(__name__, r"logs/chart_trend.log")
 class DataIngestion:
     """Class to handle data ingestion for RAG."""
     def __init__(self, upload_dir: Path = Path(r"app/static/uploads")):
-        """ Initialize with image directory.
+        """ Initialize with file directory.
         
         Args:
             upload_dir (Path): Directory to store uploaded files. Defaults to r"app/static/uploads"
         """
         self.upload_dir = upload_dir
         self.upload_dir.mkdir(parents=True, exist_ok=True)
-        logger.info(f"Intialized Data ingestion for chart trend classification with upload_dir: {upload_dir}")
+        logger.info(f"Intialized Data ingestion for rag with upload_dir: {upload_dir}")
 
     
-    def ingest_image(self, file: UploadFile):
+    def ingest_file(self, file: UploadFile):
         """Accept, save and validate the file.
         
         Args:
@@ -75,7 +75,7 @@ class DataIngestion:
             docs = text_splitter.split_documents(documents)
             logger.info(f"splitted the documents.")
             # Create and store documents in vector database
-            vector_db=FAISS.from_documents(documents, MistralAIEmbeddings())
+            vector_db=FAISS.from_documents(docs, MistralAIEmbeddings())
             logger.info(f"Vector database created from documents.")
             
             return vector_db
